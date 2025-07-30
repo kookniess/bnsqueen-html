@@ -1,0 +1,760 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>听故事听解读</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2408bfda-6c40-81c2-9794-f88d68b9c4d9" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📻</span></div><h1 class="page-title"><strong>听故事听解读</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="2408bfda-6c40-8122-a0b3-e4f7a481c396" class="">
+</p><h1 id="2408bfda-6c40-81bd-85ae-defb6312b1f7" class=""><strong>🎙️ 王牌播客 · Ace Podcasts</strong></h1><p id="2408bfda-6c40-815a-b73d-eb4b1e2c369f" class="">
+</p><h3 id="2408bfda-6c40-81d8-a156-d162817fae1c" class=""><strong>从一个声音，听见被掩盖的世界。</strong></h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81f4-9a15-efb22f9d557b"><div style="width:100%"><p id="2408bfda-6c40-813c-98e4-de0c79fb3600" class="">在这个版块，我们呈现两档最具穿透力的声音节目——</p><p id="2408bfda-6c40-8176-a2fa-e7c88b31065d" class="">它们不是传统的访谈，而是一场场“真实解读”，</p><p id="2408bfda-6c40-8126-8ce6-cac916f0b3c9" class="">在暗流涌动的职场、资本、制度之间，</p><p id="2408bfda-6c40-81b7-b985-e0a923bb450f" class="">揭开一层层看不见的剧本，还原一个个不能被说的真相湿地。</p></div></figure><p id="2408bfda-6c40-8157-93ba-d51e7f86ccb1" class="">
+</p><h2 id="2408bfda-6c40-817c-840f-e27c8c8e71ba" class="">📌 你将听到：</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-812e-930d-f79bb8e88a0b"><div style="width:100%"><ul id="2408bfda-6c40-8121-a3e4-d3c14376a5a7" class="bulleted-list"><li style="list-style-type:disc"><strong>职场中失语者的心声</strong></li></ul><ul id="2408bfda-6c40-814f-bdd6-e8ea109f7797" class="bulleted-list"><li style="list-style-type:disc"><strong>资本博弈里的潜规则</strong></li></ul><ul id="2408bfda-6c40-81e5-85a5-f01ba76ee3ba" class="bulleted-list"><li style="list-style-type:disc"><strong>制度边界的试探与对抗</strong></li></ul><ul id="2408bfda-6c40-8174-a459-cad7fc645144" class="bulleted-list"><li style="list-style-type:disc"><strong>每一个看似无声人物背后的惊心动魄</strong></li></ul><p id="2408bfda-6c40-8146-8250-c6a0e9e1be2e" class="">
+</p><p id="2408bfda-6c40-8177-8f0d-f71f99c22a5e" class="">订阅<mark class="highlight-red"><strong>玻尿酸女王那些事儿</strong></mark>，进入对应的声音世界——</p><p id="2408bfda-6c40-8108-a45a-c73c2e435e50" class=""><strong>不是为了猎奇，而是为了理解。</strong></p></div></figure><p id="2408bfda-6c40-819e-a01d-e5d53c4a3c6d" class="">
+</p><div id="2408bfda-6c40-8188-8ea5-db1e71eb1955" class="column-list"><div id="2408bfda-6c40-81b8-a526-f1e78ed4e424" style="width:43.75%" class="column"><h1 id="2408bfda-6c40-8133-95fe-f53f682ef343" class="">🌿 真相湿地</h1></div><div id="2408bfda-6c40-813a-9f51-c53f45d9186c" style="width:56.25%" class="column"><p id="2408bfda-6c40-817c-9142-fb2784fac8e9" class="">
+</p></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8133-b0a0-eac0ac59f7ef"><div style="width:100%"><h2 id="2408bfda-6c40-81f1-9680-c250da202579" class="">🪶 节目简介</h2><p id="2408bfda-6c40-81ac-a1f1-c35753326f4e" class="">在这个信息过载、情绪滥用、真相被消音的时代，我们开辟了一块“湿地”。这里没有热搜的喧嚣，没有舆论的既定立场。只有<strong>一部书</strong>，两个人，一章一章地翻开：</p><p id="2408bfda-6c40-81be-aa36-ff47fab21472" class="">《玻尿酸女王那些事儿》——一部资本操盘手写给成年人的荒诞童话。</p><p id="2408bfda-6c40-8106-9965-d5589a16cf42" class=""><strong>她们说你疯了。<br/>他们说你违法了。<br/>但我们想知道——你到底看见了什么？<br/></strong></p><p id="2408bfda-6c40-8157-ade5-dc554861c311" class="">
+</p><h2 id="2408bfda-6c40-81e6-b522-dd017f8a9d07" class="">🎙️ 主持人</h2><figure id="2408bfda-6c40-8120-9f0f-f9357e577b61" class="image"><a href="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9/Gemini_Generated_Image_pf40w7pf40w7pf40.png"><img style="width:2816px" src="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9/Gemini_Generated_Image_pf40w7pf40w7pf40.png"/></a></figure><div id="2408bfda-6c40-815c-90d6-cbc47b08a34c" class="column-list"><div id="2408bfda-6c40-8129-a085-fad632680fcb" style="width:50%" class="column"><h3 id="2408bfda-6c40-81ad-a807-c0e6c226fd4a" class="">👨 程识南｜前对冲基金分析师</h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-818e-bb91-eafaf6b243a5"><div style="width:100%"><blockquote id="2408bfda-6c40-81ed-8e7c-f22ff5de8d15" class="">“公告是话术，估值是权力的隐喻。”</blockquote><p id="2408bfda-6c40-81a5-a215-f6a3d522ac18" class="">他拆解财务数据背后的政治结构，用冷峻逻辑回击资本话术。</p></div></figure><p id="2408bfda-6c40-812c-8359-c38698db8ca3" class="">
+</p><h2 id="2408bfda-6c40-8134-9f57-c750fb00583a" class="">📘 我们在解读什么？</h2></div><div id="2408bfda-6c40-8103-8511-fc50a49ac064" style="width:50%" class="column"><h3 id="2408bfda-6c40-811a-80bc-ee961505747f" class="">👩 林述微｜前财经媒体记者</h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8181-a566-d935fa5ce50e"><div style="width:100%"><blockquote id="2408bfda-6c40-8145-b829-f96ed5be9893" class="">“权力让人失声，记忆让人复活。”</blockquote><p id="2408bfda-6c40-8124-ba7a-d4948ac4b7bc" class="">她关注人性压抑与制度阴影，从人物缝隙中追问“不该被忘记的事”。</p></div></figure><p id="2408bfda-6c40-818b-9002-ddd9e1fed3a2" class="">
+</p><p id="2408bfda-6c40-8124-aa54-e7a29f2b49d3" class="">
+</p></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81f4-a549-c2449592a453"><div style="width:100%"><p id="2408bfda-6c40-816b-98e2-de15c2ee8c92" class="">每一集《真相湿地》，都对应一本小说的章节，像做手术一样，切开结构、还原动机：</p><ul id="2408bfda-6c40-813d-8957-cc9bd1c7be21" class="bulleted-list"><li style="list-style-type:disc">📎“为什么他会收到那条误发的语音？”</li></ul><ul id="2408bfda-6c40-8190-9357-e9f477166f66" class="bulleted-list"><li style="list-style-type:disc">📎“奖金清洗制度，是如何成为软性谋杀？”</li></ul><ul id="2408bfda-6c40-8134-aec1-c2e60e03f691" class="bulleted-list"><li style="list-style-type:disc">📎“IPO前夕的股东结构，为何永远不透明？”</li></ul><ul id="2408bfda-6c40-81e8-8773-f41b874bc4b2" class="bulleted-list"><li style="list-style-type:disc">📎“赵燕的沉默，代表了谁的合谋？”</li></ul><ul id="2408bfda-6c40-8117-b86e-e7eb9a0894fe" class="bulleted-list"><li style="list-style-type:disc">📎“吹哨的代价，到底是自由，还是人格？”</li></ul></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81cd-b74d-c81941d754ac"><div style="width:100%"><blockquote id="2408bfda-6c40-81e1-8dad-c9df6ceaa4dc" class="">“资本可以量化估值，却无法消化耻辱。”<p id="2408bfda-6c40-8158-9f6c-ed6144c34516" class="">“越靠近真相，你越像疯子。”</p><p id="2408bfda-6c40-8110-b775-c4be95505ba5" class="">“他们不怕造假被发现，他们怕的是有人<strong>不肯闭嘴</strong>。”</p></blockquote></div></figure><p id="2408bfda-6c40-8140-829a-d9cbc90da4c9" class="">
+</p><h2 id="2408bfda-6c40-8170-9527-e31698f6ec12" class="">🧭 你将在这里听到</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8157-9eff-d69e4034829e"><div style="width:100%"><ul id="2408bfda-6c40-81df-bf5a-ff07d960d6ed" class="bulleted-list"><li style="list-style-type:disc">🎧 声音档案｜每章深度解构对谈</li></ul><ul id="2408bfda-6c40-8156-9152-d85d8854f250" class="bulleted-list"><li style="list-style-type:disc">📂 附件档案｜书中未公开的审计报告、结构示意、股东变化</li></ul><ul id="2408bfda-6c40-8135-9c2c-d0996ac44a1a" class="bulleted-list"><li style="list-style-type:disc">🧠 多维讨论｜听众提问 × 回答专栏 × 读者故事投稿</li></ul></div></figure></div></figure><p id="2408bfda-6c40-8141-b9db-ed698518e9c7" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-811a-956d-cf08698646e4"><div style="width:100%"><div id="2408bfda-6c40-81d5-8f4b-cf067a3e1773" class="column-list"><div id="2408bfda-6c40-81f5-ae78-fe7fdc98a24f" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-812d-a621-eadbe421e406"><div style="width:100%"><h3 id="2408bfda-6c40-8134-bfd8-e3cfcead72a8" class="">——林述微 × 程识南 共读《玻尿酸女王那些事儿》</h3><blockquote id="2408bfda-6c40-8161-bf5f-dbb1037919dd" class="">❝不是所有的真相都能流入河道。有些，只能在湿地里缓慢发酵。❞</blockquote></div></figure></div><div id="2408bfda-6c40-8122-9211-ff9cb4416936" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81c6-a6bd-f9adf52b79dd"><div style="width:100%"><figure id="2408bfda-6c40-819f-98ce-e66094469b93" class="image"><a href="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9/%E7%9C%9F%E7%9B%B8%E6%B9%BF%E5%9C%B0.jpg"><img style="width:541.232666015625px" src="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9/%E7%9C%9F%E7%9B%B8%E6%B9%BF%E5%9C%B0.jpg"/></a></figure><p id="2408bfda-6c40-815c-8af1-ec0dc884d532" class="">
+</p></div></figure></div></div></div></figure><p id="2408bfda-6c40-81a9-acee-c6cfa5f259e3" class="">
+</p><p id="2408bfda-6c40-81a8-9524-d5bab48cd866" class="">
+</p><hr id="2408bfda-6c40-8177-babb-da661f2f981a"/><div id="2408bfda-6c40-810a-95ee-ce0d865b8434" class="column-list"><div id="2408bfda-6c40-8121-9528-db25ac5eb4c8" style="width:50%" class="column"><h1 id="2408bfda-6c40-812d-bfaa-d291c30455db" class="">🎙️ 看不见的剧本</h1></div><div id="2408bfda-6c40-81a4-914d-d25db7319ad9" style="width:50%" class="column"><p id="2408bfda-6c40-8155-b956-f3fa1f24e0f6" class="">
+</p></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-816e-ab38-dd2027cc535e"><div style="width:100%"><div id="2408bfda-6c40-8136-a8bd-d22e5520ee2b" class="column-list"><div id="2408bfda-6c40-8196-adcd-e759b1b52cc5" style="width:50%" class="column"><p id="2408bfda-6c40-815d-bac6-d189f4f5dd41" class="">
+</p><figure id="2408bfda-6c40-81be-8a94-fb11860865c0" class="image"><a href="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9/%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E5%89%A7%E6%9C%AC.jpg"><img style="width:514.1146240234375px" src="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9/%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E5%89%A7%E6%9C%AC.jpg"/></a></figure><p id="2408bfda-6c40-8138-99df-c1e799deb2a7" class="">
+</p></div><div id="2408bfda-6c40-81ae-aab4-d062099b74bb" style="width:50%" class="column"><p id="2408bfda-6c40-8190-8577-e933aab87442" class=""><strong>The Invisible Script</strong></p><p id="2408bfda-6c40-8197-8b4a-ce1b616a968c" class=""><strong>一本小说背后，有多少剧本同时上演？</strong></p><p id="2408bfda-6c40-81c5-8905-de6510ece706" class="">《看不见的剧本》是一档由唐意与顾怀之联袂主持的深度访谈类播客。我们从一部小说、一个章节、一段语音出发，穿越资本迷雾、权力运作、人性困局与职场潜规则，在每一集节目中抽丝剥茧，还原那些“写在潜台词下”的结构剧本。</p><p id="2408bfda-6c40-817f-88ab-e9b3cd368629" class="">这是一本书的深度拆解，更是一场围绕真相的共同解码。</p></div></div></div></figure><p id="2408bfda-6c40-81e4-b8c1-d2dbaeabdef1" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81d7-8ff2-e861b45c654c"><div style="width:100%"><h2 id="2408bfda-6c40-818f-8667-d4e1bcbff4c2" class="">节目简介</h2><p id="2408bfda-6c40-81aa-ae75-ebff0828a0ee" class="">
+</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-810d-aded-df90641d77fb"><div style="width:100%"><p id="2408bfda-6c40-81d9-8b26-d6919e9078e5" class=""><strong>主题：</strong>《看不见的剧本：权力、财富与真相的迷局》</p><p id="2408bfda-6c40-8123-a13e-cb834681c416" class=""><strong>定位：</strong> 一档通过深度对话，剖析纪实小说《玻尿酸女王那些事儿》背后隐藏的企业阴谋、金融欺诈、权力运作与吹哨人抗争的节目。</p><p id="2408bfda-6c40-81ec-b253-e0f0f263d371" class=""><strong>基调：</strong> 现实主义、批判性、悬疑感，兼具人文关怀与深度思考。</p><p id="2408bfda-6c40-8158-b24c-fef5f774a26c" class=""><strong>每期时长：</strong> 6-10分钟</p></div></figure><h2 id="2408bfda-6c40-81d6-8153-e1cf5097397e" class="">主持人</h2><div id="2408bfda-6c40-818e-8272-d7597782052e" class="column-list"><div id="2408bfda-6c40-81f0-ada4-f0dfc99ab114" style="width:50%" class="column"><figure id="2408bfda-6c40-8197-a5c0-e9d1eb4b6b0e" class="image"><a href="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9/1.png"><img style="width:331.98785400390625px" src="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9/1.png"/></a></figure></div><div id="2408bfda-6c40-8115-8c20-e6fbbe9be841" style="width:50%" class="column"><figure id="2408bfda-6c40-8103-a86b-f2af63e51502" class="image"><a href="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9/2.png"><img style="width:331.98785400390625px" src="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9/2.png"/></a></figure></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81ee-94bd-f920490906fe"><div style="width:100%"><div id="2408bfda-6c40-8167-8c82-e2c06736b1e0" class="column-list"><div id="2408bfda-6c40-811a-94e8-fbfb989f1508" style="width:50%" class="column"><p id="2408bfda-6c40-81bc-a0f2-d52e31695d93" class=""><strong>唐意(Yi Tang)</strong></p><ul id="2408bfda-6c40-81e3-b6dc-fb59c8e0ee02" class="bulleted-list"><li style="list-style-type:disc"> 真相的追问者 </li></ul><ul id="2408bfda-6c40-8173-a960-c8d2fc478a2b" class="bulleted-list"><li style="list-style-type:disc"> 前《财经》调查记者</li></ul><ul id="2408bfda-6c40-817d-9883-f21ce1ada843" class="bulleted-list"><li style="list-style-type:disc">我将带你审视，每一个事件背后，媒体和公众看不见的权力运作</li></ul></div><div id="2408bfda-6c40-810f-9b5a-e2668bdfc47b" style="width:50%" class="column"><p id="2408bfda-6c40-81a5-8747-ded975b9594a" class=""><strong>顾怀之(Hugo Gu)</strong></p><ul id="2408bfda-6c40-81d1-9597-f1c7f4841e5b" class="bulleted-list"><li style="list-style-type:disc">资本的解构者</li></ul><ul id="2408bfda-6c40-8109-9c86-efb16a9f79b2" class="bulleted-list"><li style="list-style-type:disc">前摩根士丹利分析师</li></ul><ul id="2408bfda-6c40-816d-91a3-c7e3c7f0b25f" class="bulleted-list"><li style="list-style-type:disc">我将为你拆解，每一个资本运作背后，教科书上学不到的实战逻辑</li></ul></div></div></div></figure><h2 id="2408bfda-6c40-81e9-ab3d-ebbd1d5069fb" class="">为什么叫《看不见的剧本》？</h2><p id="2408bfda-6c40-8122-8c9e-e91f3fbbe9b7" class="">
+</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-818d-a5fe-c9d37578a39f"><div style="width:100%"><p id="2408bfda-6c40-8193-8195-de4660a2265c" class="">因为很多决定、权力、倾斜与背叛，早已写在你看不见的地方。<br/>它不是表演，而是系统。<br/>不是台词，而是结构。<br/>不是偶然，而是命定的路径设计。<br/></p><p id="2408bfda-6c40-818d-8fd9-d73eb6bf8abe" class="">我们邀请你，走进这部正在展开的“看不见的剧本”。</p></div></figure><h2 id="2408bfda-6c40-8119-a18f-e8e734407bf7" class="">分集列表（即将上线）</h2><p id="2408bfda-6c40-8155-ba9f-d1f4ec7fa9fa" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8167-b51a-f4f161622f4a"><div style="width:100%"><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8129-b8c5-dd2acfe1d87a"><div style="width:100%"><h3 id="2408bfda-6c40-811a-a4ff-cfae4735e93b" class="">第一卷 资本战场（共6章，3期）</h3><p id="2408bfda-6c40-8113-8e93-f1a97e580692" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-816c-8036-e244d61d6701"><div style="width:100%"><p id="2408bfda-6c40-819a-a4cd-e01f1416a489" class=""><strong>第 1 期：吹哨人的觉醒与代价</strong></p><p id="2408bfda-6c40-8118-88dd-ea63298be827" class=""><strong>聚焦章节：</strong> 第 001 章 《误发的语音，精准的猎杀》<div class="indented"><ul id="2408bfda-6c40-81f9-bf81-df88b2b60597" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 从 David 的“第一缕曙光”到“冰冷恐惧”：误发语音如何撕裂伪装？</li></ul><ul id="2408bfda-6c40-81b1-9d99-f08d796b2a19" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> “最硬的星座”与吹哨人的宿命：个人良知如何对抗权力围猎？</li></ul></div></p></div></figure><p id="2408bfda-6c40-81d8-9a68-e98bc3acf76d" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81e4-82e0-db0986356257"><div style="width:100%"><p id="2408bfda-6c40-813d-b478-fe438c7fac34" class=""><strong>第 2 期：资本世界的生存法则</strong></p><p id="2408bfda-6c40-818b-bb5c-f59147606f63" class=""><strong>聚焦章节：</strong> 第 002 章 《鹏润往事：资本世界的练兵场》 &amp; 第 003 章 《三类玩家，一盘大棋》</p><ul id="2408bfda-6c40-81aa-868c-fb642d683ddd" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 从国美的“圣经”到华熙的“庄股”：IR 眼中的资本市场生存哲学</li></ul><ul id="2408bfda-6c40-81eb-a4db-dffd70830111" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> “智慧洞察型”投资者的预见性：他们看透了哪些“看不见的剧本”？</li></ul></div></figure><p id="2408bfda-6c40-8185-9e42-f3cc66634b3d" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81d1-9313-dec22f416c9c"><div style="width:100%"><p id="2408bfda-6c40-814d-8b63-df26cba9de92" class=""><strong>第 3 期：天平上的选择：机遇与陷阱的权衡</strong></p><p id="2408bfda-6c40-8174-b4ac-d2f99fbc3f9c" class=""><strong>聚焦章节：</strong> 第 004 章 《资本不相信眼泪》 &amp; 第 005 章 《顶峰迷雾：离开还是继续？》 &amp; 第 006 章 《那顿饭后，人生改写》</p><ul id="2408bfda-6c40-81cd-925f-e02683915fa2" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 顶峰迷雾：当职业瓶颈遇到“有意思的机会”，David 如何权衡高薪与未知风险？</li></ul><ul id="2408bfda-6c40-81fa-bb5c-d6a532403493" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> “庄股”的诱惑：一次看似简单的行业交流，如何成为改变 David 命运的多米诺骨牌？</li></ul></div></figure><p id="2408bfda-6c40-81f7-a16e-eea88fb6a272" class="">
+</p></div></figure><p id="2408bfda-6c40-815a-a344-d56630439648" class="">
+</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-813d-a6c7-c4a414655d4d"><div style="width:100%"><h3 id="2408bfda-6c40-8142-944c-f60755d9eedf" class="">第二卷：入局庄股（共5章，3期）</h3><p id="2408bfda-6c40-812f-b097-f32ce5a4be18" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-816f-94eb-d4d882991e67"><div style="width:100%"><p id="2408bfda-6c40-81d7-9d0f-fd4403bf85ae" class=""><strong>第 4 期：猎人与猎物的初探</strong></p><p id="2408bfda-6c40-815e-944a-f6ab18377b67" class=""><strong>聚焦章节：</strong> 第 007 章 《猎人与新猎物的试探》 &amp; 第 008 章 《你的身价，就是他们的算计》<div class="indented"><ul id="2408bfda-6c40-81b8-8fcd-c7d4dd955ccc" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 长安街的隐形网络：孙德顺与赵燕的资本勾连初现端倪</li></ul><ul id="2408bfda-6c40-8101-89cc-f67d9d9629c9" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> “高薪”的代价：当你的价值，成为被算计的筹码</li></ul></div></p></div></figure><p id="2408bfda-6c40-81d6-bb70-ed48868069f2" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81a7-8abb-ff1f2a7c30a6"><div style="width:100%"><ul id="2408bfda-6c40-819c-b53a-e64a138a001e" class="bulleted-list"><li style="list-style-type:disc"><strong>第 5 期：谁在操控棋局？</strong><p id="2408bfda-6c40-812a-969c-da974829e4d7" class=""><strong>聚焦章节：</strong> 第 009 章 《谁才是控盘的那只手？》 &amp; 第 010 章 《每一笔交易都有人在算计你》</p><ul id="2408bfda-6c40-81e7-b9a3-fececda8a0bf" class="bulleted-list"><li style="list-style-type:circle"><strong>深度对话主题 1：</strong> “庄股”的秘密：从异常股权结构到信息不对称的操控手法</li></ul><ul id="2408bfda-6c40-8156-844b-ebf262f2e5e7" class="bulleted-list"><li style="list-style-type:circle"><strong>深度对话主题 2：</strong> 显微镜下的交易：如何在看似正常的市场行为中识别“影子”？</li></ul></li></ul></div></figure><p id="2408bfda-6c40-818e-b35c-c6a40a6ffbe2" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81d3-8492-cca8ffec06c5"><div style="width:100%"><ul id="2408bfda-6c40-819b-b630-e35af8583706" class="bulleted-list"><li style="list-style-type:disc"><strong>第 6 期：推不动的改变</strong><p id="2408bfda-6c40-8133-84cb-c650bf15b1ff" class=""><strong>聚焦章节：</strong> 第 011 章 《推不动的改变，和太多装睡的人》</p><ul id="2408bfda-6c40-81b9-bf65-c89fbeaca883" class="bulleted-list"><li style="list-style-type:circle"><strong>深度对话主题 1：</strong> 理想与现实的拉扯：当专业建议遭遇“固化思维”的阻力</li></ul><ul id="2408bfda-6c40-8115-957d-e693d639a997" class="bulleted-list"><li style="list-style-type:circle"><strong>深度对话主题 2：</strong> “黑匣子”中的真相：CFO 的“漫不经心”与研发投入的诡异之处</li></ul></li></ul></div></figure></div></figure><p id="2408bfda-6c40-81b1-97b3-c85f2faae500" class="">
+</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81d5-908a-c814fa0afc0c"><div style="width:100%"><h3 id="2408bfda-6c40-81c5-ba45-cdb02f3991fc" class="">第三卷：市值管理（共13章，5期）</h3><p id="2408bfda-6c40-8193-ba63-efbb8d621c22" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81b8-bf92-f46f5bd7e56e"><div style="width:100%"><p id="2408bfda-6c40-81f3-8dfc-faf3b49c87f1" class=""><strong>第 7 期：数据、博弈与信任</strong></p><p id="2408bfda-6c40-81ad-9fc1-fd92ddb90534" class=""><strong>聚焦章节：</strong> 第 012 章 《账上看不见的真相》 &amp; 第 013 章 《三张表，三场博弈》</p><ul id="2408bfda-6c40-8152-adbb-f61ef67e1faa" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> “三张表”的较量：财务数据、分析师预期与投资者判断，如何影响股价？</li></ul><ul id="2408bfda-6c40-814c-bc37-f6cc0ff7447b" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> 信任的建立与瓦解：“庄股”标签下的公信力困境</li></ul></div></figure><p id="2408bfda-6c40-81a3-9792-f19aadebb608" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8122-93ec-e2e3af43e946"><div style="width:100%"><p id="2408bfda-6c40-810a-817d-d45589a9e110" class=""><strong>第 8 期：修复与观望</strong></p><p id="2408bfda-6c40-81cc-bbdd-d67cc419a7b3" class=""><strong>聚焦章节：</strong> 第 014 章 《“庄股”背后，请回答投资人》 &amp; 第 015 章 《你在修复，他们在观望》</p><ul id="2408bfda-6c40-8127-a02c-d109bc46ac1c" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 国际路演的“火药味”：高毛利、低研发与异常股价的拷问</li></ul><ul id="2408bfda-6c40-810b-95d6-f353b65b52e7" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> 管理层的“失态”：情绪化反应如何暴露公司深层问题？</li></ul></div></figure><p id="2408bfda-6c40-81c2-bd91-e54503517d66" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81e7-b018-dcb09b4fb9c6"><div style="width:100%"><p id="2408bfda-6c40-8176-9336-f4eb761385bc" class=""><strong>第 9 期：资本的“青睐”</strong></p><p id="2408bfda-6c40-81a2-8d2a-ce39c099b278" class=""><strong>聚焦章节：</strong> 第 016 章 《资本开始回头看你了》 &amp; 第 017 章 《神秘买盘来了》</p><ul id="2408bfda-6c40-81c5-85dd-e4e091c65c50" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 顶级资本的嗅觉：高瓴与 GIC 为何青睐“被低估”的华熙？</li></ul><ul id="2408bfda-6c40-8193-bb70-f5a17875944c" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> 名人效应的加持：马云家族基金的潜在影响力与“庄股”标签的消解</li></ul></div></figure><p id="2408bfda-6c40-810f-8c05-c71c83abe8a7" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-813d-ab2b-ef18b3f415ed"><div style="width:100%"><p id="2408bfda-6c40-816a-8052-d898d12affae" class=""><strong>第 10 期：尽职调查的“X光”</strong></p><p id="2408bfda-6c40-8122-a789-ed37d62f0b04" class=""><strong>聚焦章节：</strong> 第 018 章 《第一家“靠谱资本”入场》 &amp; 第 019 章 《想骗投资人，没那么容易》</p><ul id="2408bfda-6c40-816b-9b9c-da32c40e4365" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> GIC 的“火眼金睛”：如何穿透数据表象，直击销售与研发的“水分”？</li></ul><ul id="2408bfda-6c40-813f-a748-d1022d61f97b" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> “灰色地带”的平衡：IR 在公司利益与职业操守间的挣扎</li></ul></div></figure><p id="2408bfda-6c40-818d-8636-cec7f931a68f" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81d7-b42e-dbe770077566"><div style="width:100%"><p id="2408bfda-6c40-81de-bdd1-fc4de6a6a0c1" class=""><strong>第 11 期：光环的背后</strong></p><p id="2408bfda-6c40-8190-b27a-eb563113fc58" class=""><strong>聚焦章节：</strong> 第 020 章 《签约 GIC》 &amp; 第 021 章 《光环，是她的，不是你的》 &amp; 第 022 章 《资本追光的背后，是谁在擦汗？》 &amp; 第 023 章 《他们投了你，但他们也怀疑你》 &amp; 第 024 章 《他们买的是上涨，不是你》</p><ul id="2408bfda-6c40-819f-bb1a-c714fcd802db" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 从“庄股”到“明星”：GIC 和富兰克林的加持如何重塑华熙形象？</li></ul><ul id="2408bfda-6c40-81ea-9b27-eecde2bea88c" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> 光环下的暗影：股价飙升背后，David 的不安与道德困境。</li></ul><ul id="2408bfda-6c40-8195-a481-ec46023de234" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 3：</strong> 完美的投资者日：精心策划如何掩盖潜在风险？</li></ul></div></figure><p id="2408bfda-6c40-814a-91f1-c878dbd7c523" class="">
+</p></div></figure><p id="2408bfda-6c40-812b-8cf7-f6769eeebe54" class="">
+</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8153-8c3a-eded74892dc8"><div style="width:100%"><h3 id="2408bfda-6c40-8129-8232-e0f54527660d" class="">第四卷：黑幕之下（共7章，3期）</h3><p id="2408bfda-6c40-8150-886d-c7e58149b30c" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8143-b9a4-cbe6f4e286a4"><div style="width:100%"><p id="2408bfda-6c40-815b-84d5-cabf8fcea4e9" class=""><strong>第 12 期：明升暗降的布局</strong></p><p id="2408bfda-6c40-8105-82e9-cbe964706923" class=""><strong>聚焦章节：</strong> 第 025 章 《被调岗的那天，阳光很好，刀也很快》 &amp; 第 026 章 《财务部门是个黑匣子》</p><ul id="2408bfda-6c40-81d4-a7b0-d13a50e34f7c" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 晋升的陷阱：从 IR 负责人到“职场幽灵”的边缘化策略</li></ul><ul id="2408bfda-6c40-81c1-8211-d7532c69ec9b" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> 隐匿的真相：当财务部门成为“黑匣子”，数据造假如何暗流涌动？</li></ul></div></figure><p id="2408bfda-6c40-8196-bb22-c3aa440c1985" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81be-a099-efa233372d86"><div style="width:100%"><p id="2408bfda-6c40-8108-8c63-db285fea9751" class=""><strong>第 13 期：赵燕的朋友圈与连环作案</strong></p><p id="2408bfda-6c40-81b7-857e-c16e0c459509" class=""><strong>聚焦章节：</strong> 第 027 章 《赵总的朋友圈，比你想的深》 &amp; 第 028 章 《表面合规，内里连环作案》</p><ul id="2408bfda-6c40-8127-a659-f649b356e4fa" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 金融魔术师与隐形关系网：赵燕如何利用孙德顺等构建权力庇护？</li></ul><ul id="2408bfda-6c40-81cb-baf7-d7c887437eaa" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> 审计、律师、券商的“共谋”：系统性财务造假如何“表面合规”？</li></ul></div></figure><p id="2408bfda-6c40-81b7-97d6-ee63d6f75521" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8120-a605-ec9efac7fe7d"><div style="width:100%"><p id="2408bfda-6c40-8176-baf7-d58b363abc0c" class=""><strong>第 14 期：遗书般的批文与税务迷局</strong></p><p id="2408bfda-6c40-8110-b3b5-dcab14864df1" class=""><strong>聚焦章节：</strong> 第 029 章 《看起来是批文，其实是遗书》 &amp; 第 030 章 《造假是精算，不是胡说》</p><ul id="2408bfda-6c40-81eb-a510-db8fd8ca82f9" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 欺诈发行：从锦州银行股权造假到虚增成本，如何骗取深交所批文？</li></ul><ul id="2408bfda-6c40-8135-a3ae-c45692d16bbd" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> “精算”的谎言：如何通过基金操作实现巨额逃税？</li></ul></div></figure><p id="2408bfda-6c40-81ec-a9fb-c70a9f627164" class="">
+</p></div></figure><p id="2408bfda-6c40-81fa-a42e-d45b6f526b83" class="">
+</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-814b-b8a1-e5f39cc07af5"><div style="width:100%"><h3 id="2408bfda-6c40-8165-828a-cbbde55cdc3e" class="">第五卷：奖金陷阱与定点清除（共5章，2期）</h3><p id="2408bfda-6c40-81e9-b105-f52160be7281" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81b5-ac14-e84f33790b40"><div style="width:100%"><p id="2408bfda-6c40-8176-b14d-d546f9f3bf75" class=""><strong>第 15 期：招标背后的“收买”与“捆绑”</strong></p><p id="2408bfda-6c40-8192-8c26-ea9b14e70db1" class=""><strong>聚焦章节：</strong> 第 031 章 《谁制造了这场完美路演？》 &amp; 第 032 章 《看起来是招标，背后是收买》 &amp; 第 033 章 《你以为是奖金，其实在送命》</p><ul id="2408bfda-6c40-8189-beaf-e93beb5e705f" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> “完美路演”的真相：低利率债券背后的利益交换与“奖金陷阱”</li></ul><ul id="2408bfda-6c40-818e-a36b-e260617f6d3b" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> “定点清除”的序幕：赵燕如何通过奖金与公安系统操控 David？</li></ul></div></figure><p id="2408bfda-6c40-8132-8e20-ff6d3d56f7ce" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8115-ace6-d8399ce83809"><div style="width:100%"><p id="2408bfda-6c40-81ac-b662-ce5bdac08720" class=""><strong>第 16 期：空气中的监控与猎杀</strong></p><p id="2408bfda-6c40-81cc-b872-d842f80a1627" class=""><strong>聚焦章节：</strong> 第 034 章 《空气都在监控你》 &amp; 第 035 章 《猎杀名单上，你是第一个》 &amp; 第 036 章 《证据是他的盾牌，也是炸药》</p><ul id="2408bfda-6c40-81bb-ba0e-dfae10be51c2" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 李长征的“权力之手”：公安经侦如何被私用，将 David 推向绝境？</li></ul><ul id="2408bfda-6c40-81cd-b00f-cc488d76d9f0" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> 证据的双刃剑：David 手中真相，如何成为他的“护身符”与“催命符”？</li></ul></div></figure><p id="2408bfda-6c40-8144-a64e-e353ec59c747" class="">
+</p></div></figure><p id="2408bfda-6c40-819a-9fbb-c26ab6683dec" class="">
+</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8102-a138-cb00b7e1c31f"><div style="width:100%"><h3 id="2408bfda-6c40-8139-80ce-c4c6ede88193" class="">第六卷：在真相的边境（共6章，2期）</h3><p id="2408bfda-6c40-8181-9593-e077cb412c8c" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-817c-a9a6-e0b2ed9ae0ba"><div style="width:100%"><p id="2408bfda-6c40-81f8-9faf-ed6e06e93730" class=""><strong>第 17 期：穿越半个地球的证据</strong></p><p id="2408bfda-6c40-81e0-890d-d5d102df44f9" class=""><strong>聚焦章节：</strong> 第 037 章 《他带着证据，穿越半个地球》 &amp; 第 038 章 《重新喘口气，也要付出代价》</p><ul id="2408bfda-6c40-81a8-bb0d-d37937904b19" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 逃离与坚守：David 流亡海外，如何保管核心证据并应对“无形追捕”？</li></ul><ul id="2408bfda-6c40-819a-b98c-e67633d577ad" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> 异国他乡的警报：当“安全感”被打破，David 如何在恐惧中重构防御？</li></ul></div></figure><p id="2408bfda-6c40-81f0-a161-d19eae83623b" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8111-af53-c027e92b58d4"><div style="width:100%"><p id="2408bfda-6c40-819d-adb9-e0dbbf028d12" class=""><strong>第 18 期：吹哨人：孤独与决绝</strong></p><p id="2408bfda-6c40-81f2-9d58-f3dc338fa446" class=""><strong>聚焦章节：</strong> 第 039 章 《写下举报信那天，他没有回头》 &amp; 第 040 章 《一段录像，刺穿了伪装》 &amp; 第 041 章 《举报人：孤独是默认状态》 &amp; 第 042 章 《跨海举报，吹哨人诞生》</p><ul id="2408bfda-6c40-818d-a175-ef5ce57565d3" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 撕裂的伪装：王大中律师的“背叛”如何揭示权力渗透？</li></ul><ul id="2408bfda-6c40-8124-bb84-d25015010373" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> 跨海举报的决绝：David 如何突破重重阻碍，将真相公之于众？</li></ul></div></figure><p id="2408bfda-6c40-8114-a69e-ce0de8b5dc60" class="">
+</p></div></figure><p id="2408bfda-6c40-81e6-aa84-c69373e25214" class="">
+</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8100-a69a-d641fa5a1694"><div style="width:100%"><h3 id="2408bfda-6c40-813e-ae92-c3c669a95bd2" class="">第七卷：真相浮出水面，正义仍在潜水（共8章，3期）</h3><p id="2408bfda-6c40-813e-92d4-cad4487e0333" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8129-ba91-ef1aaa3fd100"><div style="width:100%"><p id="2408bfda-6c40-81bd-b073-c6ea06f6d6fa" class=""><strong>第 19 期：招股与举报的平行线</strong></p><p id="2408bfda-6c40-8183-8fa5-d326548665b2" class=""><strong>聚焦章节：</strong> 第 043 章 《一个在招股，一个在举报》 &amp; 第 044 章 《光鲜上市背后，多少电话打了出去》 &amp; 第 045 章 《上市材料，是门说谎的艺术》 &amp; 第 046 章 《这不是“被调查”，是“稳住时间表”》</p><ul id="2408bfda-6c40-81d1-8633-d3eb2fb9cdfc" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 双重博弈：华熙生物冲刺科创板与 David 举报调查的平行叙事</li></ul><ul id="2408bfda-6c40-8144-a8ca-d0d1b463fbaa" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> “电话打点”的艺术：权力如何干预监管，为上市保驾护航？</li></ul><ul id="2408bfda-6c40-81cd-997f-c48144a3a1d1" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 3：</strong> 上市材料的“谎言艺术”：如何巧妙“粉饰”敏感信息，规避监管审查？</li></ul></div></figure><p id="2408bfda-6c40-819f-ba98-fdfe321dd9b7" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81da-9e4d-f3a7af933092"><div style="width:100%"><p id="2408bfda-6c40-8126-986a-df70f8469802" class=""><strong>第 20 期：钟声响起与危机的埋藏</strong></p><p id="2408bfda-6c40-8156-8497-c8af1c37cbb8" class=""><strong>聚焦章节：</strong> 第 047 章 《钟声响起，她赢了》 &amp; 第 048 章 《危机压下去，真相埋得更深》</p><ul id="2408bfda-6c40-81d3-9aae-fdfb3077882f" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 胜利的代价：华熙生物上市的钟声，如何掩盖其背后不为人知的妥协与牺牲？</li></ul><ul id="2408bfda-6c40-81a8-bd01-d6e825a4c68c" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> 轻描淡写的“处罚”：当铁证如山的举报只换来一纸警示函，权力如何压制真相？</li></ul></div></figure><p id="2408bfda-6c40-8191-ab63-f668b51cfb05" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-813c-8f7a-ffb8d48d63e5"><div style="width:100%"><p id="2408bfda-6c40-81bd-a3db-c435f3947802" class=""><strong>第 21 期：温柔陷阱与未完待续</strong></p><p id="2408bfda-6c40-81b7-b2d2-d88b265d5783" class=""><strong>聚焦章节：</strong> 第 049 章 《微信聊天记录，温柔陷阱》 &amp; 第 050 章 《和解协议？还是劝退协议？》</p><ul id="2408bfda-6c40-815b-9e6d-c77068419a7e" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> “温柔陷阱”：赵燕如何利用情感攻势和“善意谎言”，瓦解 David 的斗志？</li></ul><ul id="2408bfda-6c40-8133-8571-e61d8ba2dc5f" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> “和解”的本质：一份看似公平的协议，如何成为权力胜利的象征？</li></ul></div></figure><p id="2408bfda-6c40-8102-8a1f-f61b25c3fd61" class="">
+</p></div></figure><p id="2408bfda-6c40-81fa-bafd-e7772dba45a2" class="">
+</p><figure class="block-color-teal_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81e8-b273-cd47c0df590c"><div style="width:100%"><h3 id="2408bfda-6c40-81fb-b682-f8ad2e812b15" class="">第八卷：正义已读，不回（共8章，3期）</h3><p id="2408bfda-6c40-81c2-a97f-cb14338c34e1" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81df-aaea-c67754dc5325"><div style="width:100%"><p id="2408bfda-6c40-81dc-9297-ebcbe800444e" class=""><strong>第 22 期：回家的陷阱</strong></p><p id="2408bfda-6c40-8119-97b5-d8cae836dedc" class=""><strong>聚焦章节：</strong> 第 051 章 《他以为是回家，其实是陷阱》 &amp; 第 052 章 《爪牙倒了，陷阱还在》</p><ul id="2408bfda-6c40-81b4-bb1f-e7c94ae69063" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 归途困境：David 为何明知风险仍选择回国？亲情与真相的拉扯</li></ul><ul id="2408bfda-6c40-816f-89c4-c6f3b291c55e" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> “爪牙倒了，陷阱还在”：张吉星的落马，为何仍无法打破体制的惯性？</li></ul></div></figure><p id="2408bfda-6c40-81a5-928f-c09936e8e6d3" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81c3-85aa-ce0c5ed1a881"><div style="width:100%"><p id="2408bfda-6c40-81b9-a8e9-ddaedc9576f1" class=""><strong>第 23 期：父亲的最后力量与法律的沉默</strong></p><p id="2408bfda-6c40-81bd-bb36-d7eb7da11605" class=""><strong>聚焦章节：</strong> 第 053 章 《父亲走了，国家正准备带走他》 &amp; 第 054 章 《这是父亲留给他的最后一份力量》 &amp; 第 055 章 《转机像一根头发，能不能抓住看命》 &amp; 第 056 章 《他遵循了程序，程序从不回应》</p><ul id="2408bfda-6c40-8163-91a2-d8331e9789ef" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 生死时速：父亲的离世如何意外地给了 David 反击的机会？</li></ul><ul id="2408bfda-6c40-8185-9a5d-ed7a0a5ee281" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> 法律条文如何对抗“人情”与“惯性”？</li></ul><ul id="2408bfda-6c40-8101-be34-ff3e5189273e" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 3：</strong> 法律的“沉默”：当明确的法律规定在执行中被架空，个体如何寻求公正？</li></ul></div></figure><p id="2408bfda-6c40-812c-a9d7-ea9d9d41a5a7" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81f2-91f7-e895462a0f70"><div style="width:100%"><p id="2408bfda-6c40-815c-9d8a-eef71b88bcec" class=""><strong>第 24 期：两次出走与正义的终章</strong></p><p id="2408bfda-6c40-8193-9a78-ea595706b5db" class=""><strong>聚焦章节：</strong> 第 057 章 《第二次出走，更像自救》 &amp; 第 058 章 《不是正义没来，是你还在等》</p><ul id="2408bfda-6c40-81c7-92f7-faac51a47db2" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 1：</strong> 告别与重生：David 再次离开中国，这是一种“逃避”还是“自救”？</li></ul><ul id="2408bfda-6c40-81f3-ab30-c63905cdeaab" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 2：</strong> “正义已读，不回”：个体在不完美体制下如何定义并追寻自己的正义？</li></ul><ul id="2408bfda-6c40-81d0-ab7a-f0dc60fa5d7a" class="bulleted-list"><li style="list-style-type:disc"><strong>深度对话主题 3：</strong> 写作的意义：记录真相，见证时代，为后来者点亮微弱的希望</li></ul></div></figure><p id="2408bfda-6c40-8192-8b12-c5502684d391" class="">
+</p></div></figure></div></figure></div></figure><p id="2408bfda-6c40-81e6-9899-d2d202bd7e8e" class="">
+</p><hr id="2408bfda-6c40-8128-bae8-fea566ff399e"/><h2 id="2408bfda-6c40-81c4-8f1b-d37d8aad564d" class="">📬 订阅我们</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-816f-b5e7-c26bcb24dcc9"><div style="width:100%"><p id="2408bfda-6c40-8184-833c-eba36a83658e" class="">想比别人早一步听见真相？</p><blockquote id="2408bfda-6c40-81af-ad9a-d86bb3b8d6a2" class="">➜ 立即订阅<mark class="highlight-red"><strong>玻尿酸女王那些事儿</strong></mark>，收听《真相湿地》《看不见的剧本》播客<p id="2408bfda-6c40-81bb-83d6-f63035ea50cb" class="">➜ [每周一章｜与林述微、程识南一起沉入“湿地”，与唐意、顾怀之带你进入“剧本”]</p><p id="2408bfda-6c40-81a9-8b9a-c183f61e677c" class="">
+</p></blockquote><div id="2408bfda-6c40-817c-980d-c0b8da93b4e9" class="column-list"><div id="2408bfda-6c40-81d3-b2ce-d945ff20541b" style="width:33.33333333333333%" class="column"><figure id="2408bfda-6c40-8191-be40-d1352150a33e" class="image"><a href="%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E6%88%AA%E5%B1%8F2025-06-28_%E4%B8%8B%E5%8D%884.38.18.png"><img style="width:241.328125px" src="%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E6%88%AA%E5%B1%8F2025-06-28_%E4%B8%8B%E5%8D%884.38.18.png"/></a></figure></div><div id="2408bfda-6c40-8126-be69-efd71ff7b6e3" style="width:33.33333333333333%" class="column"><p id="2408bfda-6c40-81ee-a2bf-f90befc61811" class="">请在YouTube和微信视频号搜索：</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81c6-822e-ee4fedb4f3de"><div style="width:100%"><p id="2408bfda-6c40-8197-ab76-dcac4864a737" class=""><mark class="highlight-red"><strong>玻尿酸女王那些事儿</strong></mark></p></div></figure></div><div id="2408bfda-6c40-81ee-b716-fb00f202ad36" style="width:33.33333333333333%" class="column"><figure id="2408bfda-6c40-8141-97da-e2c839476b32" class="image"><a href="%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E8%A7%86%E9%A2%91%E5%8F%B7.png"><img style="width:105.1953125px" src="%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E8%A7%86%E9%A2%91%E5%8F%B7.png"/></a></figure></div></div></div></figure><p id="2408bfda-6c40-81db-b027-f484bb4ddc3e" class="">
+</p><blockquote id="2408bfda-6c40-8164-9a4a-dd2574dfa6be" class=""><strong>真相不是被隐藏了，而是你不再敢看了。欢迎来到《真相湿地》和《看不见的剧本》</strong></blockquote><p id="2408bfda-6c40-81e1-bcaf-c61d9df73a58" class="">
+</p><hr id="2408bfda-6c40-8183-9b8e-cca05ac38059"/><p id="2408bfda-6c40-81b8-9e32-dc9821e87576" class="">
+</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81a2-a4b5-f5f86ff0d12c"><div style="width:100%"><h1 id="2408bfda-6c40-8137-8868-dad17693155c" class=""><strong>支持我</strong></h1><p id="2408bfda-6c40-8163-b48a-f20c70b39949" class="">
+</p><blockquote id="2408bfda-6c40-814d-b8ff-e56c703de966" class=""><mark class="highlight-red"><strong>一起为真相，续一盏灯火</strong></mark></blockquote><p id="2408bfda-6c40-813d-9617-ce2292acd64a" class="">
+</p><p id="2408bfda-6c40-8132-b7aa-fc934d2b8827" class=""><strong>我一直靠着意志力，努力还原每一个细节。<br/>这背后，是无数个深夜的撰写、剪辑，<br/>是我面对真实时的挣扎与犹豫。<br/></strong></p><p id="2408bfda-6c40-8131-b566-e1f2207154c5" class=""><strong>我需要你的力量。</strong></p><p id="2408bfda-6c40-811c-a7bc-f2bf861215f3" class=""><strong>如果你听懂了我的讲述，<br/>如果你愿意陪我继续走下去，<br/>请随心、或用一杯咖啡，<br/>支持我，继续说出那些不敢被说出的真相。<br/></strong></p><div id="2408bfda-6c40-81de-90eb-d1e486073988" class="column-list"><div id="2408bfda-6c40-818f-a8db-ea495e8611fb" style="width:50%" class="column"><h3 id="2408bfda-6c40-81ff-973d-fdc2cb33f562" class=""><strong><a href="https://donate.stripe.com/cNi28j9e1gzNf5EdLBcfK0d">成为并肩作战的“战友“</a></strong></h3><h3 id="2408bfda-6c40-81e4-86d6-f19ef1023ac6" class="block-color-red"><strong><a href="https://donate.stripe.com/9B65kvfCpcjxbTs9vlcfK0f">点击支持我</a></strong></h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81d3-9a80-dea978cc5553"><div style="width:100%"><figure id="2408bfda-6c40-8164-98a4-c750886a04ce" class="image"><a href="../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/1.jpg"><img style="width:1080px" src="../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/1.jpg"/></a></figure></div></figure></div><div id="2408bfda-6c40-813f-87a3-ef543200e987" style="width:50%" class="column"><h3 id="2408bfda-6c40-8112-b5ca-ed1da1ed8418" class=""><strong>用最熟悉的方式传递温暖</strong></h3><h3 id="2408bfda-6c40-81bd-8d0a-c83d52bc1abb" class=""><mark class="highlight-red">扫描二维码鼓励我</mark></h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81dd-8f89-f86befc3f13b"><div style="width:100%"><figure id="2408bfda-6c40-81aa-8783-cabb83228ef2" class="image"><a href="../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/2.jpg"><img style="width:1080px" src="../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/2.jpg"/></a></figure></div></figure></div></div><p id="2408bfda-6c40-81d7-8c48-e02995df292f" class="">
+</p><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81ec-967a-e87b0c98cb26"><div style="width:100%"><div id="2408bfda-6c40-81ae-98d7-d1dc2339e0d4" class="column-list"><div id="2408bfda-6c40-8171-90dc-d26ca672dce9" style="width:25%" class="column"><p id="2408bfda-6c40-81b9-a99d-df14280b52bf" class="">
+</p></div><div id="2408bfda-6c40-81ed-891a-c8083abf079c" style="width:79.16666666666666%" class="column"><figure id="2408bfda-6c40-8144-80ba-d525f45d5d75" class="image"><a href="https://anytype.io/assets/pricing/donate.svg"><img src="https://anytype.io/assets/pricing/donate.svg"/></a></figure></div><div id="2408bfda-6c40-8163-a6f3-fe460f89c623" style="width:4.1666666666666705%" class="column"><p id="2408bfda-6c40-8181-8de8-f80c4c26e7b9" class="">
+</p></div></div></div></figure><div id="2408bfda-6c40-81fa-b3a9-c42b653c07e0" class="column-list"><div id="2408bfda-6c40-811e-9701-eb3c3642b980" style="width:100%" class="column"></div></div></div></figure><p id="2408bfda-6c40-8136-b4de-d73d0f75f050" class="">
+</p><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81ad-b7e7-d313b9e2132a"><div style="font-size:1.5em"><span class="icon">🏠</span></div><div style="width:100%"><p id="2408bfda-6c40-81f0-9324-fca15d6027e2" class=""><a href="../bnsqueen-html%202408bfda6c408077b2f9e1d4b0bfbf42.html">首页</a> |  <mark class="highlight-orange_background"><a href="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9.html">王牌播客</a></mark> | <mark class="highlight-orange_background"><a href="%E8%B5%84%E6%9C%AC%E6%88%98%E5%9C%BA%202408bfda6c4081a9a943eb3159538427.html">第一卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%85%A5%E5%B1%80%E5%BA%84%E8%82%A1%202408bfda6c40813ca23be3f18606f7b6.html">第二卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%B8%82%E5%80%BC%E7%AE%A1%E7%90%86%202408bfda6c4081d9bc48fd2fdac93d3f.html">第三卷</a></mark> | <mark class="highlight-orange_background"><a href="%E9%BB%91%E5%B9%95%E4%B9%8B%E4%B8%8B%202408bfda6c4081818c63e9e70dfa09af.html">第四卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%A5%96%E9%87%91%E9%99%B7%E9%98%B1%E4%B8%8E%E5%AE%9A%E7%82%B9%E6%B8%85%E9%99%A4%202408bfda6c4081589958f8b1c6172040.html">第五卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%9C%A8%E7%9C%9F%E7%9B%B8%E7%9A%84%E8%BE%B9%E5%A2%83%202408bfda6c40812cad26c45720a90c28.html">第六卷</a></mark> | <mark class="highlight-orange_background"><a href="%E7%9C%9F%E7%9B%B8%E6%B5%AE%E5%87%BA%E6%B0%B4%E9%9D%A2%20%E6%AD%A3%E4%B9%89%E4%BB%8D%E5%9C%A8%E6%BD%9C%E6%B0%B4%202408bfda6c4081c2aa00e2dde6434e5c.html">第七卷</a></mark> | <mark class="highlight-orange_background"><a href="%E6%AD%A3%E4%B9%89%E5%B7%B2%E8%AF%BB%20%E4%B8%8D%E5%9B%9E%202408bfda6c4081b491ccc08ee61b3973.html">第八卷</a></mark> | <mark class="highlight-orange_background"><a href="%E4%B8%BA%E7%9C%9F%E7%9B%B8%E7%BB%AD%E4%B8%80%E6%9D%AF%E7%81%AF%E7%81%AB%202408bfda6c4081ccbe1dc68fa8815ab5.html">支持我</a></mark> | </p></div></figure><p id="2408bfda-6c40-81d3-b141-dfd90d1c199c" class="">
+</p><hr id="2408bfda-6c40-81c2-91f9-f8cf150f0b51"/><p id="2408bfda-6c40-818c-bcb6-c75578128687" class="">
+</p><div><div id="2408bfda-6c40-819c-8192-ee1622fcc4ce" class="column-list"><div id="2408bfda-6c40-81cb-9df2-e7991ba379f4" style="width:4.166666666666666%" class="column"><p id="2408bfda-6c40-8105-993c-db587e15b500" class="">
+</p></div><div id="2408bfda-6c40-8135-8ba5-e17e1be84595" style="width:91.66666666666666%" class="column"><div id="2408bfda-6c40-8127-b594-ec5a1c4cba76" class="column-list"><div id="2408bfda-6c40-8151-b8ba-fd517f0b0295" style="width:78.125%" class="column"><p id="2408bfda-6c40-8123-b559-f2d7cc084d3f" class="">
+</p><figure id="2408bfda-6c40-81a1-aa47-f785f6fbf6eb" class="image"><a href="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.51.38.png"><img style="width:169.2447967529297px" src="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.51.38.png"/></a></figure></div><div id="2408bfda-6c40-8179-b9de-c4473beffdda" style="width:106.25%" class="column"><figure id="2408bfda-6c40-81b6-89e8-feb7cc51cb5d" class="image"><a href="%E6%88%AA%E5%B1%8F2025-07-29_%E4%B8%8A%E5%8D%881.50.51.png"><img style="width:195.98959350585938px" src="%E6%88%AA%E5%B1%8F2025-07-29_%E4%B8%8A%E5%8D%881.50.51.png"/></a></figure><p id="2408bfda-6c40-81e2-be9a-f68518eb1f5d" class="">
+</p></div><div id="2408bfda-6c40-811a-9892-c011c4b77def" style="width:75%" class="column"><figure id="2408bfda-6c40-813d-a09c-e6bb2450acdc" class="image"><a href="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.52.01.png"><img style="width:61.99653244018555px" src="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.52.01.png"/></a></figure></div><div id="2408bfda-6c40-81c7-ae27-f88953f251d0" style="width:56.249999999999986%" class="column"><figure id="2408bfda-6c40-8148-a56f-d2b0d5cf7829" class="image" style="text-align:left"><a href="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8A%E5%8D%8810.04.48.png"><img style="width:74.14930725097656px" src="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8A%E5%8D%8810.04.48.png"/></a></figure></div></div><p id="2408bfda-6c40-8181-9e20-fce1cd6077e9" class="">
+</p></div><div id="2408bfda-6c40-8125-8bb3-ee40670c7b28" style="width:4.166666666666669%" class="column"><p id="2408bfda-6c40-81b5-ba15-dcedf3dcb453" class="">
+</p></div></div><hr id="2408bfda-6c40-8134-9970-c4365b3092dc"/><p id="2408bfda-6c40-8142-97ea-eb845573b465" class=""><mark class="highlight-gray"><strong>© 2025 玻尿酸女王那些事儿, David | 作者/华熙生物吹哨人/被陷害的犯罪嫌疑人</strong></mark></p></div><p id="2408bfda-6c40-817c-9e22-d3ff22300f9e" class="">
+</p><p id="2408bfda-6c40-8195-b368-d6629652221b" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
