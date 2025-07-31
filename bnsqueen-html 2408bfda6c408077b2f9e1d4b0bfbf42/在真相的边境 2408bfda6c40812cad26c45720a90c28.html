@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>在真相的边境</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2408bfda-6c40-812c-ad26-c45720a90c28" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">6️⃣</span></div><h1 class="page-title">在真相的边境</h1><p class="page-description"></p></header><div class="page-body"><h1 id="2408bfda-6c40-818f-97c1-ea7e6a60918d" class="">7年抗争，45万字，8卷58章</h1><p id="2408bfda-6c40-81d2-a3c7-f602acbd383d" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8199-bd88-c62a8f7ee2b4"><div style="width:100%"><p id="2408bfda-6c40-816c-a81c-c97eb8099893" class=""><strong>从北京到奥克兰，从资本造假到吹哨反击——这不是故事线，而是生存线</strong></p><p id="2408bfda-6c40-81ac-93e9-cac3447c0b9e" class="">
+</p><blockquote id="2408bfda-6c40-811b-ae87-e570c54d2868" class="block-color-yellow"><mark class="highlight-default">”每一卷不是为了续写，而是为了保命”</mark></blockquote><p id="2408bfda-6c40-81cd-81a9-efe360b1921d" class="">
+</p><p id="2408bfda-6c40-8174-a23c-e98877c5baf7" class="">《玻尿酸女王那些事儿》不是虚构小说，而是作者 David 亲历的一场资本市场的真实抗争。</p><p id="2408bfda-6c40-813c-a266-f1d2fafc2df3" class="">从投资者关系负责人，到被构陷刑事立案的吹哨人 ——</p><p id="2408bfda-6c40-810e-9b1c-c7b5354ab05e" class="">
+</p><p id="2408bfda-6c40-81fe-acc1-ff0229e6b4c2" class=""><strong>本书揭露华熙内幕造假、权力勾结、庄股操盘的完整链条。</strong></p></div></figure><p id="2408bfda-6c40-8147-a99f-edab6f54d998" class="">
+</p><hr id="2408bfda-6c40-8124-9b6a-db9ad2818ab7"/><div id="2408bfda-6c40-81e1-8576-ff72683f8926" class="column-list"><div id="2408bfda-6c40-8140-88d1-f8e78f0fae76" style="width:56.25%" class="column"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><strong>导读</strong></summary><div class="indented"><p id="2408bfda-6c40-8120-a5aa-c8e298461eaa" class="">
+</p><p id="2408bfda-6c40-81b6-8506-e6e6d56fdf90" class="">
+</p></div></details><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-817f-accc-e892f2bc8fe9"><div style="width:100%"><blockquote id="2408bfda-6c40-817e-b08d-cb10990b6dbb" class=""><strong>翻开这本书，你便成了知情人</strong></blockquote><blockquote id="2408bfda-6c40-8158-8e64-f5b1b9e426a6" class=""><strong>短剧之外，是更惊心动魄的45万字真相</strong></blockquote><blockquote id="2408bfda-6c40-81db-9fd3-f181d10cb4f4" class=""><strong>所有改变的源头，一切故事的开始</strong></blockquote></div></figure><p id="2408bfda-6c40-8130-80ff-d855c4da21e5" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8113-b115-ea5ff5ce5049"><div style="width:100%"><p id="2408bfda-6c40-81ac-a75a-c105dc44bd0e" class="">本书不仅是一部关于财务造假、欺诈发行债券的记录，更是资本、政商利益交换与司法体系被操纵的现实写照。主角David，曾是华熙生物资本运作的重要推手，他见证了‘玻尿酸女王’赵燕如何通过关联交易、权力网络，将一个商业神话推向巅峰，也见证了谎言大厦崩塌的全过程。45万字，将为您还原一个真实的、你我或许都身处其中的资本战场</p></div></figure></div><div id="2408bfda-6c40-81a9-9e4b-c11fcde8c265" style="width:43.75%" class="column"><figure id="2408bfda-6c40-81e5-a436-e78f5742a617" class="image"><a href="%E8%B5%84%E6%9C%AC%E6%88%98%E5%9C%BA%202408bfda6c4081a9a943eb3159538427/%E5%B0%81%E9%9D%A2_%E7%AE%80%E4%BD%93.jpg"><img style="width:709.9921875px" src="%E8%B5%84%E6%9C%AC%E6%88%98%E5%9C%BA%202408bfda6c4081a9a943eb3159538427/%E5%B0%81%E9%9D%A2_%E7%AE%80%E4%BD%93.jpg"/></a></figure></div></div><p id="2408bfda-6c40-8119-b62b-c55a902610aa" class="">
+</p><hr id="2408bfda-6c40-81d7-a279-fcefda24a117"/><p id="2408bfda-6c40-8195-83c5-ef3a9ea83285" class="">
+</p><div id="2408bfda-6c40-81a7-881a-d2b8e48b1247" class="collection-content"><h4 class="collection-title">第六卷 </h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><div data-testid="/icons/font_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/font_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/font_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>名称</th><th><span class="icon property-icon"><div data-testid="/icons/clock_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/clock_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/clock_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>创建时间</th><th><span class="icon property-icon"><div data-testid="/icons/list_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/list_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/list_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>标签</th></tr></thead><tbody><tr id="2408bfda-6c40-816f-9560-d18df7a8be96"><td class="cell-title"><a href="%E5%9C%A8%E7%9C%9F%E7%9B%B8%E7%9A%84%E8%BE%B9%E5%A2%83%202408bfda6c40812cad26c45720a90c28/%E7%AC%AC%E5%85%AD%E5%8D%B7%202408bfda6c4081a7881ad2b8e48b1247/%E7%AC%AC037%E7%AB%A0%20%E4%BB%96%E5%B8%A6%E7%9D%80%E8%AF%81%E6%8D%AE%EF%BC%8C%E7%A9%BF%E8%B6%8A%E5%8D%8A%E4%B8%AA%E5%9C%B0%E7%90%83%202408bfda6c40816f9560d18df7a8be96.html">第037章 他带着证据，穿越半个地球</a></td><td class="cell-h&gt;[o"><time>@2025年7月31日 11:15</time></td><td class="cell-rEbA"><span class="selected-value select-value-color-pink">第六卷</span></td></tr><tr id="2408bfda-6c40-810c-b666-d669430ea6c0"><td class="cell-title"><a href="%E5%9C%A8%E7%9C%9F%E7%9B%B8%E7%9A%84%E8%BE%B9%E5%A2%83%202408bfda6c40812cad26c45720a90c28/%E7%AC%AC%E5%85%AD%E5%8D%B7%202408bfda6c4081a7881ad2b8e48b1247/%E7%AC%AC038%E7%AB%A0%20%E9%87%8D%E6%96%B0%E5%96%98%E5%8F%A3%E6%B0%94%EF%BC%8C%E4%B9%9F%E8%A6%81%E4%BB%98%E5%87%BA%E4%BB%A3%E4%BB%B7%202408bfda6c40810cb666d669430ea6c0.html">第038章 重新喘口气，也要付出代价</a></td><td class="cell-h&gt;[o"><time>@2025年7月31日 11:15</time></td><td class="cell-rEbA"><span class="selected-value select-value-color-pink">第六卷</span></td></tr><tr id="2408bfda-6c40-81e2-a4a1-fa0ecf065e45"><td class="cell-title"><a href="%E5%9C%A8%E7%9C%9F%E7%9B%B8%E7%9A%84%E8%BE%B9%E5%A2%83%202408bfda6c40812cad26c45720a90c28/%E7%AC%AC%E5%85%AD%E5%8D%B7%202408bfda6c4081a7881ad2b8e48b1247/%E7%AC%AC039%E7%AB%A0%20%E5%86%99%E4%B8%8B%E4%B8%BE%E6%8A%A5%E4%BF%A1%E9%82%A3%E5%A4%A9%EF%BC%8C%E4%BB%96%E6%B2%A1%E6%9C%89%E5%9B%9E%E5%A4%B4%202408bfda6c4081e2a4a1fa0ecf065e45.html">第039章 写下举报信那天，他没有回头</a></td><td class="cell-h&gt;[o"><time>@2025年7月31日 11:15</time></td><td class="cell-rEbA"><span class="selected-value select-value-color-pink">第六卷</span></td></tr><tr id="2408bfda-6c40-81d6-a763-e9266149731d"><td class="cell-title"><a href="%E5%9C%A8%E7%9C%9F%E7%9B%B8%E7%9A%84%E8%BE%B9%E5%A2%83%202408bfda6c40812cad26c45720a90c28/%E7%AC%AC%E5%85%AD%E5%8D%B7%202408bfda6c4081a7881ad2b8e48b1247/%E7%AC%AC040%E7%AB%A0%20%E4%B8%80%E6%AE%B5%E5%BD%95%E5%83%8F%EF%BC%8C%E5%88%BA%E7%A9%BF%E4%BA%86%E4%BC%AA%E8%A3%85%202408bfda6c4081d6a763e9266149731d.html">第040章 一段录像，刺穿了伪装</a></td><td class="cell-h&gt;[o"><time>@2025年7月31日 11:15</time></td><td class="cell-rEbA"><span class="selected-value select-value-color-pink">第六卷</span></td></tr><tr id="2408bfda-6c40-81b0-80f0-ce4ba8b44444"><td class="cell-title"><a href="%E5%9C%A8%E7%9C%9F%E7%9B%B8%E7%9A%84%E8%BE%B9%E5%A2%83%202408bfda6c40812cad26c45720a90c28/%E7%AC%AC%E5%85%AD%E5%8D%B7%202408bfda6c4081a7881ad2b8e48b1247/%E7%AC%AC041%E7%AB%A0%20%E4%B8%BE%E6%8A%A5%E4%BA%BA%EF%BC%9A%E5%AD%A4%E7%8B%AC%E6%98%AF%E9%BB%98%E8%AE%A4%E7%8A%B6%E6%80%81%202408bfda6c4081b080f0ce4ba8b44444.html">第041章 举报人：孤独是默认状态</a></td><td class="cell-h&gt;[o"><time>@2025年7月31日 11:15</time></td><td class="cell-rEbA"><span class="selected-value select-value-color-pink">第六卷</span></td></tr><tr id="2408bfda-6c40-8153-9e1a-f39ad619afbe"><td class="cell-title"><a href="%E5%9C%A8%E7%9C%9F%E7%9B%B8%E7%9A%84%E8%BE%B9%E5%A2%83%202408bfda6c40812cad26c45720a90c28/%E7%AC%AC%E5%85%AD%E5%8D%B7%202408bfda6c4081a7881ad2b8e48b1247/%E7%AC%AC042%E7%AB%A0%20%E8%B7%A8%E6%B5%B7%E4%B8%BE%E6%8A%A5%EF%BC%8C%E5%90%B9%E5%93%A8%E4%BA%BA%E8%AF%9E%E7%94%9F%202408bfda6c4081539e1af39ad619afbe.html">第042章 跨海举报，吹哨人诞生</a></td><td class="cell-h&gt;[o"><time>@2025年7月31日 11:15</time></td><td class="cell-rEbA"><span class="selected-value select-value-color-pink">第六卷</span></td></tr></tbody></table><br/><br/></div><div id="2408bfda-6c40-8188-a0be-d2efaec410a2" class="column-list"><div id="2408bfda-6c40-81ac-893b-d9bfe1a9ad17" style="width:100%" class="column"></div></div><p id="2408bfda-6c40-81d1-9a9a-cce6502ba7ee" class="">
+</p><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8167-9a58-d0e5a846abee"><div style="font-size:1.5em"><span class="icon">🏠</span></div><div style="width:100%"><p id="2408bfda-6c40-81e3-8cb9-f131cbd4a7b5" class=""><a href="../bnsqueen-html%202408bfda6c408077b2f9e1d4b0bfbf42.html">首页</a> |  <mark class="highlight-orange_background"><a href="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9.html">王牌播客</a></mark> | <mark class="highlight-orange_background"><a href="%E8%B5%84%E6%9C%AC%E6%88%98%E5%9C%BA%202408bfda6c4081a9a943eb3159538427.html">第一卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%85%A5%E5%B1%80%E5%BA%84%E8%82%A1%202408bfda6c40813ca23be3f18606f7b6.html">第二卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%B8%82%E5%80%BC%E7%AE%A1%E7%90%86%202408bfda6c4081d9bc48fd2fdac93d3f.html">第三卷</a></mark> | <mark class="highlight-orange_background"><a href="%E9%BB%91%E5%B9%95%E4%B9%8B%E4%B8%8B%202408bfda6c4081818c63e9e70dfa09af.html">第四卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%A5%96%E9%87%91%E9%99%B7%E9%98%B1%E4%B8%8E%E5%AE%9A%E7%82%B9%E6%B8%85%E9%99%A4%202408bfda6c4081589958f8b1c6172040.html">第五卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%9C%A8%E7%9C%9F%E7%9B%B8%E7%9A%84%E8%BE%B9%E5%A2%83%202408bfda6c40812cad26c45720a90c28.html">第六卷</a></mark> | <mark class="highlight-orange_background"><a href="%E7%9C%9F%E7%9B%B8%E6%B5%AE%E5%87%BA%E6%B0%B4%E9%9D%A2%20%E6%AD%A3%E4%B9%89%E4%BB%8D%E5%9C%A8%E6%BD%9C%E6%B0%B4%202408bfda6c4081c2aa00e2dde6434e5c.html">第七卷</a></mark> | <mark class="highlight-orange_background"><a href="%E6%AD%A3%E4%B9%89%E5%B7%B2%E8%AF%BB%20%E4%B8%8D%E5%9B%9E%202408bfda6c4081b491ccc08ee61b3973.html">第八卷</a></mark> | <mark class="highlight-orange_background"><a href="%E4%B8%BA%E7%9C%9F%E7%9B%B8%E7%BB%AD%E4%B8%80%E6%9D%AF%E7%81%AF%E7%81%AB%202408bfda6c4081ccbe1dc68fa8815ab5.html">支持我</a></mark></p></div></figure><p id="2408bfda-6c40-818a-b64b-db571f715e8f" class="">
+</p><hr id="2408bfda-6c40-81a1-b31a-ec87e0fbe02d"/><p id="2408bfda-6c40-81c3-aee9-fc4d61f7da37" class="">
+</p><div id="2408bfda-6c40-81ab-9a93-f766a5b6cea3" class="column-list"><div id="2408bfda-6c40-81ae-bc2b-cd342efbe697" style="width:4.166666666666666%" class="column"><p id="2408bfda-6c40-818e-8246-c033f6116dee" class="">
+</p></div><div id="2408bfda-6c40-8144-aa18-f75ed3d20a0d" style="width:91.66666666666666%" class="column"><div id="2408bfda-6c40-8195-9def-e8f25daa4ac5" class="column-list"><div id="2408bfda-6c40-810e-9695-f8a4bb4c0ea4" style="width:78.125%" class="column"><p id="2408bfda-6c40-811c-bdc4-eac4677f7a34" class="">
+</p><figure id="2408bfda-6c40-8115-8b80-c1615880f708" class="image"><a href="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.51.38.png"><img style="width:169.2447967529297px" src="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.51.38.png"/></a></figure></div><div id="2408bfda-6c40-818a-8f08-efe3b9b925cf" style="width:106.25%" class="column"><figure id="2408bfda-6c40-81b3-963b-f5a7334f4fc3" class="image"><a href="%E6%88%AA%E5%B1%8F2025-07-29_%E4%B8%8A%E5%8D%881.50.51.png"><img style="width:195.98959350585938px" src="%E6%88%AA%E5%B1%8F2025-07-29_%E4%B8%8A%E5%8D%881.50.51.png"/></a></figure><p id="2408bfda-6c40-81aa-907b-cda244362094" class="">
+</p></div><div id="2408bfda-6c40-810a-b68f-da1bfacd281f" style="width:75%" class="column"><figure id="2408bfda-6c40-8107-a936-d46504323e8e" class="image"><a href="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.52.01.png"><img style="width:61.99653244018555px" src="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.52.01.png"/></a></figure></div><div id="2408bfda-6c40-81c1-8c27-dd6ff07b56d1" style="width:56.249999999999986%" class="column"><figure id="2408bfda-6c40-81bc-906e-caad9faf67d1" class="image" style="text-align:left"><a href="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8A%E5%8D%8810.04.48.png"><img style="width:74.14930725097656px" src="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8A%E5%8D%8810.04.48.png"/></a></figure></div></div><p id="2408bfda-6c40-81ce-8e8d-f390f51fba37" class="">
+</p></div><div id="2408bfda-6c40-81e3-9c00-cf3c7a4b91fb" style="width:4.166666666666669%" class="column"><p id="2408bfda-6c40-8129-8224-c564362683fc" class="">
+</p></div></div><hr id="2408bfda-6c40-8159-8e4d-ff869843b73a"/><p id="2408bfda-6c40-8158-9baa-f0e0eb941bdd" class=""><mark class="highlight-gray"><strong>© 2025 玻尿酸女王那些事儿, David | 作者/华熙生物吹哨人/被陷害的犯罪嫌疑人</strong></mark></p><p id="2408bfda-6c40-817c-a18c-d55f2811a120" class="">
+</p><p id="2408bfda-6c40-8127-a644-e92c8e32c4fa" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

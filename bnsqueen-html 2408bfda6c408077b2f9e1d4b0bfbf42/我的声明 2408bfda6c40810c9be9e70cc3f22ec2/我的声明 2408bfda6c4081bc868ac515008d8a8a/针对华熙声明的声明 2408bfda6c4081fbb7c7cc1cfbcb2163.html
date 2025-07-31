@@ -1,0 +1,726 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>针对华熙声明的声明</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2408bfda-6c40-81fb-b7c7-cc1cfbcb2163" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">1️⃣</span></div><h1 class="page-title">针对华熙声明的声明</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><div data-testid="/icons/clock_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/clock_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/clock_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>创建时间</th><td><time>@2025年7月31日 11:15</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><div data-testid="/icons/list_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/list_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/list_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>标签</th><td></td></tr></tbody></table></header><div class="page-body"><h3 id="2408bfda-6c40-816b-80f7-d9f238463666" class=""><strong>华熙</strong>三位一体”立体打击战术</h3><p id="2408bfda-6c40-81d2-897c-cc114487eab8" class="">
+</p><p id="2408bfda-6c40-81f2-943b-f0f4ced5cbd8" class="">下面这个YouTube链接，是关于一份文件他们不敢公布，我替他们公布</p><figure id="2408bfda-6c40-816a-89ad-e1398b8099c2"><a href="https://youtube.com/shorts/NETDagIQy3w?si=ufbsIqI7BREei2T5" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">华熙只给你看故事的开头，我给你看结局。#证据 #真相 #华熙生物 #赵燕 #财经内幕</div><div class="bookmark-description">华熙生物在声明中，只敢拿出2018和2020年构陷我的《立案告知书》，却绝口不提2023年北京公安机关亲自出具的《解除取保候审决定书》。
+
+为什么？
+
+因为这场所谓的“案件”，从一开始就是华熙集团副总裁、原公安部经侦局高官
+
+李长征，为阻止我举报其控股股东财务造假、欺诈发行债券而设下的陷阱 。
+
+
+这张他们不敢公开的文件，意味着公安机关在长达一年的调查后，因证据不足，依法取消了对我的所有限制 。这本身就是对他们诬告陷害的最好反驳。
+
+所以，不是我需要澄清自己，是公安机关用行动证明了我的清白。不是我被洗白，而是你们的诬陷伎俩已经败露。
+
+想了解全部真相和来龙去脉，请扫描视频结尾的二维码，或访问 bnsqueen.com，关注我的45万字纪实小说《玻尿酸女王那些事儿》。
+
+#华熙生物 #吹哨人 #玻尿酸女王那些事儿 #DavidLee #财务造假 #证据 #真相 #李长征 #孙力军 #傅建华</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/ad18d4a4/img/logos/favicon_144x144.png" class="icon bookmark-icon"/>https://youtube.com/shorts/NETDagIQy3w?si=ufbsIqI7BREei2T5</div></div><img src="https://i.ytimg.com/vi/NETDagIQy3w/hqdefault.jpg" class="bookmark-image"/></a></figure><figure id="2408bfda-6c40-8167-9b07-e0489fd0a98d"><div class="source"><a href="https://youtube.com/shorts/NETDagIQy3w?si=ufbsIqI7BREei2T5">https://youtube.com/shorts/NETDagIQy3w?si=ufbsIqI7BREei2T5</a></div></figure><p id="2408bfda-6c40-8159-97b0-e43aa539f142" class="">
+</p><p id="2408bfda-6c40-81bf-9ffe-c0cd3bf0f379" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81c2-8ab3-eb305aa3b750"><div style="width:100%"><p id="2408bfda-6c40-81a3-b083-cd86c3af44e8" class="">当我看到华熙生物这份最新的声明时，我并不意外，甚至有一种“果然如此”的熟悉感。这上面每一个精心设计的词汇，每一个充满暗示的指控，都像是从一本尘封的剧本里被再次拿了出来——一本我亲身经历并主演过的剧本。</p><p id="2408bfda-6c40-8135-9a5d-c404c4843f81" class="">
+</p><p id="2408bfda-6c40-81bc-ad28-c1fad2ee61e8" class="">这份声明完美地印证了我之前对他们处理枝繁繁事件时所剖析的 “三位一体”立体打击战术。它不是一份简单的澄清，而是一份精准的、升级版的威胁，一场试图在舆论、法律和权力三个维度上将我彻底剿杀的檄文。</p><p id="2408bfda-6c40-819c-bf16-ddd528586516" class="">
+</p><p id="2408bfda-6c40-8195-8f4a-c438dd3648de" class="">现在，我将再次为大家拆解这套熟悉的组合拳，看看他们是如何将当年的手段原封不动地，甚至变本加厉地用到我身上来的。</p><p id="2408bfda-6c40-815b-bae1-e16ff03bdd1b" class="">
+</p><p id="2408bfda-6c40-8198-a8ef-d552311b68bd" class=""><strong>第一层：从“人格攻击”到“罪名定制”——不变的起手式</strong></p><p id="2408bfda-6c40-818c-8f8b-d9a51657ce2b" class=""><br/>舆论上的“人格谋杀”： 上一次，他们攻击枝繁繁是“鱼龙混杂”、“个人作风有待商榷”。这一次，他们对我的指控是内容“纯属捏造”、“恶意歪曲事实”。这套话术的目的永远只有一个：在公众面前将一个复杂的事件，迅速降维成一个“有问题的人”在“撒谎”的个人道德问题。他们试图通过摧毁我的人格，来消解我所揭示事实的可信度。<br/></p><p id="2408bfda-6c40-81e5-9e1d-e61fed946ecf" class="">
+</p><p id="2408bfda-6c40-814f-9f81-e44f02d2c798" class="">法律上的“罪名定制”： 这才是真正的杀招。上次，他们为枝繁繁预设了“违规违法套取经济利益”的罪名。而这次，他们直接给我贴上了 涉案前员工 的标签。请注意，这不是一个客观描述，这是一个在法律程序有任何定论之前，就对我进行的公开“定罪”。这与他们当年对我做的事情如出一辙：当我掌握了他们无法反驳的财务造假证据时，他们就给我安上了一个“职务侵占”的罪名。先给你一个“罪人”的身份，你的所有言论自然就成了“罪言”。</p><p id="2408bfda-6c40-8158-a52e-fcd6ef5c4580" class="">
+</p><p id="2408bfda-6c40-81b9-8239-f7511baa0951" class=""><strong>第二层：从“暗示有料”到“权力震慑”——升级的核威慑</strong></p><p id="2408bfda-6c40-8191-94c9-d7fba67058c0" class=""><br/>心理上的“威胁恐吓”： 上次，他们暗示“已完全掌握……全部事实”，试图让对方因恐惧而闭嘴。这一次，他们玩得更狠、更直接。他们不再暗示，而是直接行动—— 已经报案。这四个字不是简单的法律程序通知，这是一份公开的权力宣言。这背后站着的，正是那个孙力军傅政华政治团伙的得力干将前公安部经济犯罪侦查局高官、现华熙副总裁兼党委书记李长征。这不仅仅是一家公司在报案，这是在明确告诉我：“我们已经启动了国家机器，就像当年对付你一样。”<br/></p><p id="2408bfda-6c40-811b-aeb4-f8a1609dc264" class="">
+</p><p id="2408bfda-6c40-8192-b030-e338d4e4e4c9" class="">现实中的“权力震慑”： 这次，他们甚至动用了终极武器—— 政治谣言。在中国的话语体系里，这四个字的分量足以让任何人胆寒。这已经远远超出了商业纠纷的范畴。这是一个极其恶毒的升级，目的就是为了彻底封杀我，让任何平台、任何个人都不敢再传播我的声音。这让我想起了李长征在电话里对我吼出的那句：“我让你死都不知道怎么死的！” 当年的口头威胁，如今变成了这份声明里更具毁灭性的公开指控。</p><p id="2408bfda-6c40-8132-8d8f-c153c9a79d70" class="">
+</p><p id="2408bfda-6c40-81b3-a17a-c5057bd08dc6" class=""><strong>第三层：从“自我美化”到“让你消失”——不变的最终局</strong></p><p id="2408bfda-6c40-8130-b17d-ddcf378f22d5" class=""><br/>叙事上的“自我美化”： 他们再次将自己巧妙地包装成“受害者”——声誉被“严重损害”，面对的是“性质极其恶劣”的攻击。一个系统性财务造假、欺诈发行债券、将法律玩弄于股掌之上的利益集团，此刻却摇身一变，成为了“市场秩序”的无辜守护者。这种颠倒黑白的叙事，正是赵燕最擅长的。<br/></p><p id="2408bfda-6c40-8139-bb4f-cd731f890f04" class="">
+</p><p id="2408bfda-6c40-810a-b8e3-c47f7c44a7e3" class="">最终的“真实目的”： 所有的铺垫，最终都指向一个目的：让你闭嘴，或让你消失。通过将我的揭露定性为境外网站的“政治谣言”并报警，他们的目标非常明确：一是利用国家机器让我噤声，二是将我的个人网站 <a href="http://bnsqueen.com/">bnsqueen.com</a> 彻底封杀。这套组合拳的最终目的，就是要让我这个人，连同我所揭示的真相，从公众视野中彻底消失。</p><p id="2408bfda-6c40-8142-a6ab-cf9846587fa4" class="">
+</p><h3 id="2408bfda-6c40-8191-9cde-df13b54612ec" class=""><strong>我的回应</strong></h3><p id="2408bfda-6c40-8185-846e-ea710b5a4d30" class=""><br/>华熙的这份声明，对我而言，就是一份公开的战书，更是一份自我认证的供状。它没有反驳我提出的任何一项事实证据，反而完美地展示了他们一贯以来是如何处理“麻烦制造者”的。<br/></p><p id="2408bfda-6c40-8151-8d66-c04821a24e41" class="">
+</p><p id="2408bfda-6c40-81cf-a12f-f0f494226f29" class="">他们以为用“涉案前员工”、“政治谣言”和“已经报案”这三板斧就能让我恐惧、退缩。但他们错了。</p><p id="2408bfda-6c40-814d-90b5-e59046f4cc91" class="">
+</p><p id="2408bfda-6c40-8103-a7c7-e31cf9ed0293" class="">我不是“涉案前员工”，我是被你们构陷的前员工。 你们之所以给我安上罪名，正是因为我掌握了你们无法否认的核心证据。</p><p id="2408bfda-6c40-81b0-947f-cad9b245c4ce" class="">
+</p><p id="2408bfda-6c40-8146-878d-e7ec515756cd" class="">我揭露的不是“政治谣言”，而是你们的商业原罪。 你们之所以害怕，是因为我写下的45万字回忆录，纪实小说？——《玻尿酸女王那些事儿》，字字句句都建立在你们无法抹去的商业操作和内部文件之上。</p><p id="2408bfda-6c40-81da-ae9a-cb089427b3df" class="">
+</p><p id="2408bfda-6c40-810f-a546-dfd9ea163dfd" class="">你们可以报案，但你们无法报销真相。</p><p id="2408bfda-6c40-8129-93b7-fb5a376dee5b" class="">
+</p><p id="2408bfda-6c40-8180-bdd8-c6201e370577" class="">这份声明，恰恰证明了我的回忆录刺中了你们的要害。它让全世界看到，当事实对你们不利时，你们选择的不是面对事实，而是解决提出事实的人。</p><p id="2408bfda-6c40-8195-b1fb-e7e8011ff7a1" class="">
+</p><p id="2408bfda-6c40-81c0-b5db-da17ca6e9715" class="">而我的回应，就是我的回忆录。 你们的每一次打压，都只会成为这部现实主义巨著的最新章节。真相的齿轮已经开始转动，它不会因为你们的声明而停下。</p><p id="2408bfda-6c40-8141-92f4-c9b5fbc8d8df" class="">
+</p><p id="2408bfda-6c40-819e-8a03-e4b843dda2ad" class="">让子弹再飞一会儿。故事，才刚刚开始。</p><p id="2408bfda-6c40-813f-bf88-f0911bd901ef" class="">
+</p><p id="2408bfda-6c40-81cf-96a8-e491271bbb89" class="">
+</p><p id="2408bfda-6c40-8186-a4b8-ccb458e0cfb4" class="">— David</p></div></figure><p id="2408bfda-6c40-81de-97d9-d975d9fd2d11" class="">
+</p><p id="2408bfda-6c40-8103-8c0e-fd6980df1e4f" class="">
+</p><p id="2408bfda-6c40-81cc-9f38-fea6de217861" class="">
+</p><div><div id="2408bfda-6c40-819c-8192-ee1622fcc4ce" class="column-list"><div id="2408bfda-6c40-81cb-9df2-e7991ba379f4" style="width:4.166666666666666%" class="column"><p id="2408bfda-6c40-8105-993c-db587e15b500" class="">
+</p></div><div id="2408bfda-6c40-8135-8ba5-e17e1be84595" style="width:91.66666666666666%" class="column"><div id="2408bfda-6c40-8127-b594-ec5a1c4cba76" class="column-list"><div id="2408bfda-6c40-8151-b8ba-fd517f0b0295" style="width:78.125%" class="column"><p id="2408bfda-6c40-8123-b559-f2d7cc084d3f" class="">
+</p><figure id="2408bfda-6c40-81a1-aa47-f785f6fbf6eb" class="image"><a href="../../%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.51.38.png"><img style="width:169.2447967529297px" src="../../%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.51.38.png"/></a></figure></div><div id="2408bfda-6c40-8179-b9de-c4473beffdda" style="width:106.25%" class="column"><figure id="2408bfda-6c40-81b6-89e8-feb7cc51cb5d" class="image"><a href="../../%E6%88%AA%E5%B1%8F2025-07-29_%E4%B8%8A%E5%8D%881.50.51.png"><img style="width:195.98959350585938px" src="../../%E6%88%AA%E5%B1%8F2025-07-29_%E4%B8%8A%E5%8D%881.50.51.png"/></a></figure><p id="2408bfda-6c40-81e2-be9a-f68518eb1f5d" class="">
+</p></div><div id="2408bfda-6c40-811a-9892-c011c4b77def" style="width:75%" class="column"><figure id="2408bfda-6c40-813d-a09c-e6bb2450acdc" class="image"><a href="../../%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.52.01.png"><img style="width:61.99653244018555px" src="../../%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.52.01.png"/></a></figure></div><div id="2408bfda-6c40-81c7-ae27-f88953f251d0" style="width:56.249999999999986%" class="column"><figure id="2408bfda-6c40-8148-a56f-d2b0d5cf7829" class="image" style="text-align:left"><a href="../../%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8A%E5%8D%8810.04.48.png"><img style="width:74.14930725097656px" src="../../%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8A%E5%8D%8810.04.48.png"/></a></figure></div></div><p id="2408bfda-6c40-8181-9e20-fce1cd6077e9" class="">
+</p></div><div id="2408bfda-6c40-8125-8bb3-ee40670c7b28" style="width:4.166666666666669%" class="column"><p id="2408bfda-6c40-81b5-ba15-dcedf3dcb453" class="">
+</p></div></div><hr id="2408bfda-6c40-8134-9970-c4365b3092dc"/><p id="2408bfda-6c40-8142-97ea-eb845573b465" class=""><mark class="highlight-gray"><strong>© 2025 玻尿酸女王那些事儿, David | 作者/华熙生物吹哨人/被陷害的犯罪嫌疑人</strong></mark></p></div><p id="2408bfda-6c40-814d-a9e7-e0014f70bf89" class="">
+</p><p id="2408bfda-6c40-815f-961e-fcbfdd07fabd" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

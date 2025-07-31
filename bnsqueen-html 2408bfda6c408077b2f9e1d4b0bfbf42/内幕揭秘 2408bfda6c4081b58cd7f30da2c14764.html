@@ -1,0 +1,745 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>内幕揭秘</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2408bfda-6c40-81b5-8cd7-f30da2c14764" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🕶️</span></div><h1 class="page-title">内幕揭秘</h1><p class="page-description"></p></header><div class="page-body"><p id="2408bfda-6c40-816d-b856-f0ad18f3d195" class="">
+</p><h1 id="2408bfda-6c40-81f5-849c-f4d296fd5680" class="">💥EP01 “哦豁，这条K线居然能涨出3.828亿？”</h1><p id="2408bfda-6c40-81f1-a29c-eed98a03cf07" class="">
+</p><figure id="2408bfda-6c40-81c1-88c7-d53dfda94ca1" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%885.28.34.png"><img style="width:2066px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%885.28.34.png"/></a></figure><p id="2408bfda-6c40-8115-9051-c832604c00a1" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81ae-b502-eaf6e59227ca"><div style="width:100%"><p id="2408bfda-6c40-81a5-8804-c544882e53c6" class="">👀 <strong>来，朋友们，眼睛往这看——</strong></p><p id="2408bfda-6c40-81c8-b93f-fefa950a43af" class="">这不是基金经理吹的牛，也不是港股老韭菜做的梦。</p><p id="2408bfda-6c40-81ad-88a4-d8478b2aaa2d" class="">这是真实发生在2017年4月的<strong>暴利清仓现场</strong>👇👇👇</p><p id="2408bfda-6c40-8171-ae3d-e323c6196818" class="">🧠 看懂没？来，我翻译一下：</p><ul id="2408bfda-6c40-8193-a898-f69f387d0b09" class="bulleted-list"><li style="list-style-type:disc">低位吸够，拉起来；</li></ul><ul id="2408bfda-6c40-81e1-a9bd-f4cd79a666b2" class="bulleted-list"><li style="list-style-type:disc">暗号一响，全线清仓；</li></ul><ul id="2408bfda-6c40-8161-be22-ef0a5e4b6d05" class="bulleted-list"><li style="list-style-type:disc">然后，赚了3.828亿，留下一地韭菜。</li></ul><p id="2408bfda-6c40-81de-b870-ecff3d497b70" class="">🤷‍♂️ 问题来了：</p><p id="2408bfda-6c40-814f-9d91-eeb28508c917" class="">这事是“天才操盘”？</p><p id="2408bfda-6c40-8134-918a-e6233ba6cec4" class="">还是“内幕开挂”？</p><p id="2408bfda-6c40-81bf-99c5-cd3a0d444f96" class="">📎 <strong>你猜猜是谁干的？提示：名字里有‘华熙’。</strong></p></div></figure><p id="2408bfda-6c40-8166-99c8-d54c1b9841a1" class="">
+</p><hr id="2408bfda-6c40-8125-9103-d7b70faa0771"/><h1 id="2408bfda-6c40-81e3-aef8-d13c3cbd9b0e" class=""><strong>🧾 EP02  搞完钱💰，该怎么做账才能不交税呢？</strong></h1><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-811b-9897-ce807f1bc64e"><div style="width:100%"><p id="2408bfda-6c40-8173-a4f4-f4aad4d5dc5f" class="">💼 华熙的朋友说：简单，我们有御用大法师——</p><p id="2408bfda-6c40-8169-934c-ff695ac1ccae" class="">👇来看他们的魔术：</p><p id="2408bfda-6c40-8191-80e3-ff545558445b" class="">🔍 签名齐全，审得漂亮，美得像一幅画。</p><p id="2408bfda-6c40-814c-9c94-fcdbd30fba7f" class="">👀 你以为3.828亿不用交税啊？</p><ul id="2408bfda-6c40-811f-b6c4-f962806f5faf" class="bulleted-list"><li style="list-style-type:disc">我加营业成本</li></ul><ul id="2408bfda-6c40-810a-b44b-fc5b4f0c8a67" class="bulleted-list"><li style="list-style-type:disc">我加销售费用</li></ul><ul id="2408bfda-6c40-81a1-baf5-e4e7dd9a884e" class="bulleted-list"><li style="list-style-type:disc">我加管理费用</li></ul><ul id="2408bfda-6c40-8172-a28c-c518fa75aaa7" class="bulleted-list"><li style="list-style-type:disc">我加财务费用</li></ul><ul id="2408bfda-6c40-8133-b67f-ed2e9483d220" class="bulleted-list"><li style="list-style-type:disc">👉 不用交税了 。。。。</li></ul><p id="2408bfda-6c40-8131-8dd2-d5c0923e398a" class="">🎯 简称：变！个！花！</p><p id="2408bfda-6c40-8157-93c2-e136004fddd2" class="">
+</p></div></figure><p id="2408bfda-6c40-815b-9536-fa3cc02530be" class="">
+</p><figure id="2408bfda-6c40-81c3-8c1e-eed78509228e" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%885.32.06.png"><img style="width:709.982666015625px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%885.32.06.png"/></a></figure><div id="2408bfda-6c40-8104-9786-f4b6ead5bfe3" class="column-list"><div id="2408bfda-6c40-8151-ad37-ebf62bac00f3" style="width:50%" class="column"><p id="2408bfda-6c40-8138-8017-c1c2306737aa" class="">
+</p><figure id="2408bfda-6c40-812f-9b4b-dbf40c62d28f" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%886.13.29.png"><img style="width:709.982666015625px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%886.13.29.png"/></a></figure></div><div id="2408bfda-6c40-81ff-bc95-c2cfa3079377" style="width:50%" class="column"><p id="2408bfda-6c40-8167-ab69-cc2971f8fd4b" class="">
+</p><figure id="2408bfda-6c40-812c-a211-e595193ff97e" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%886.09.11.png"><img style="width:331.97918701171875px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%886.09.11.png"/></a></figure></div></div><p id="2408bfda-6c40-81b7-8f08-d2c4213510e2" class="">
+</p><h2 id="2408bfda-6c40-8116-93d1-d5acc7566e2d" class="">所有领导都签字了没? 嗯嗯。。签了</h2><p id="2408bfda-6c40-816d-8998-d2962ac25fff" class="">
+</p><figure id="2408bfda-6c40-8181-8559-c68dbce53fda" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%886.09.59.png"><img style="width:709.982666015625px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%886.09.59.png"/></a></figure><p id="2408bfda-6c40-8140-9007-f15d851a877f" class="">
+</p><hr id="2408bfda-6c40-8191-a63a-fccc66c0e203"/><h1 id="2408bfda-6c40-8176-94f5-c0aa6b7ab65e" class="">💼 EP03｜“想造假？找他们！审计报告都带提示的～”</h1><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-817b-8943-c37d1bcaf63b"><div style="width:100%"><p id="2408bfda-6c40-81ea-99ff-e60f83775c5f" class="">🖊️ 邮件关键词赏析 (卖个关子，原稿邮件放在视频里，请大家订阅转发开启小铃铛)</p><ul id="2408bfda-6c40-811d-8be7-ca2f6357e84e" class="bulleted-list"><li style="list-style-type:disc">初稿已完成，请审核 ✅</li></ul><ul id="2408bfda-6c40-8176-8946-d9b2f558421d" class="bulleted-list"><li style="list-style-type:disc">“昕宇虚增成本较大” ✅✅✅</li></ul><ul id="2408bfda-6c40-81c3-9c8a-e59e49583e9d" class="bulleted-list"><li style="list-style-type:disc">“请审慎考虑” ✅✅</li></ul><ul id="2408bfda-6c40-81e3-ba66-f79b950298ff" class="bulleted-list"><li style="list-style-type:disc">终稿的跟初稿一样啊。✅✅✅</li></ul><p id="2408bfda-6c40-81cf-b6f4-c9520557c549" class="">🤔 <strong>啊这……是审计，还是实诚地提前打个“假账预告”？</strong></p></div></figure><h2 id="2408bfda-6c40-8196-b7b3-febdd43b77e7" class="">想知道是哪家会计师事务所审的报吗？</h2><p id="2408bfda-6c40-812e-ae8b-ead4a1a969ec" class="">👀 不卖关子了，老铁们自己看图👇👇👇</p><div id="2408bfda-6c40-81ed-8561-efcac320ea1a" class="column-list"><div id="2408bfda-6c40-811b-866d-f1066076da0f" style="width:50%" class="column"><figure id="2408bfda-6c40-81d6-ba9f-fe43e14da31f" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%885.47.32.png"><img style="width:709.982666015625px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%885.47.32.png"/></a></figure></div><div id="2408bfda-6c40-81ac-8443-db7f074c0025" style="width:50%" class="column"><figure id="2408bfda-6c40-8158-ace3-c0522f15f3ac" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%885.48.13.png"><img style="width:1126px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%885.48.13.png"/></a></figure><p id="2408bfda-6c40-8179-aead-f6e99c44d8d8" class="">
+</p></div></div><p id="2408bfda-6c40-81b1-ba60-e239bdcf085e" class="">
+</p><hr id="2408bfda-6c40-8131-bcd0-fda773d70697"/><h1 id="2408bfda-6c40-816f-8b0e-cf6a075214bf" class="">🕵️‍♂️ EP05｜黄金三人组+主角上线，演出开始！</h1><p id="2408bfda-6c40-81a1-af50-ccbfc71036f9" class="">
+</p><div id="2408bfda-6c40-8123-9df8-e2992359761a" class="column-list"><div id="2408bfda-6c40-81fc-a852-cc103480d1b8" style="width:62.5%" class="column"><h3 id="2408bfda-6c40-81bb-9b52-e2517fa8b680" class="">💡 来，咱们一图揭晓黄金阵容：</h3><p id="2408bfda-6c40-8172-9a03-c1158137b0f0" class="">🏆 欢迎来到华熙·2025年度“全链条黄金项目组”颁奖典礼！</p><p id="2408bfda-6c40-81b3-b5ba-c3c4f1664865" class="">🎖️ 入选嘉宾包括：</p><ul id="2408bfda-6c40-8169-b4ae-fd9601f3d346" class="bulleted-list"><li style="list-style-type:disc">亚太/大信会计师事务所 → 专攻“看穿但不说穿”；</li></ul><ul id="2408bfda-6c40-8116-b308-fb5cea6d0225" class="bulleted-list"><li style="list-style-type:disc">西部证券项目负责人 → 擅长“文件秒签，疑问不问”；</li></ul><ul id="2408bfda-6c40-8168-91c3-fcdc026ff1d3" class="bulleted-list"><li style="list-style-type:disc">通商律师合伙人 → 精通“模糊边界，合法掩饰”；</li></ul><p id="2408bfda-6c40-814d-a251-d0b001d88493" class="">🧠 他们仿佛不是来尽职调查的，</p><p id="2408bfda-6c40-817d-add3-cc01557f072d" class="">而是——</p><blockquote id="2408bfda-6c40-81a7-8e24-e5943fe9903b" class="">“一个配合演出的黄金剧组。”</blockquote><p id="2408bfda-6c40-81b7-88db-c2666d69bc00" class="">
+</p><p id="2408bfda-6c40-817c-9d76-f0a27277b09c" class="">
+</p><p id="2408bfda-6c40-8198-ba46-e2d0695dae3e" class="">
+</p><hr id="2408bfda-6c40-8192-bbff-f9e58eac0a0e"/></div><div id="2408bfda-6c40-81c3-8ec5-d8ec663be7c9" style="width:37.49999999999999%" class="column"><figure id="2408bfda-6c40-81d8-b84d-e81dfae03248" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%889.48.32.png"><img style="width:709.982666015625px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%889.48.32.png"/></a></figure></div></div><h1 id="2408bfda-6c40-811b-97b1-edd3fe4b7c73" class="">💀 🎭EP06｜“资本界《疯狂动物城》” </h1><p id="2408bfda-6c40-8149-98e8-e75b37d31758" class="">
+</p><blockquote id="2408bfda-6c40-81cc-ae0e-dc9cb5a6dc2c" class="">“深圳交易所批了个什么？”</blockquote><figure id="2408bfda-6c40-81b3-80e1-ef02ff4fe878" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%889.14.43.png"><img style="width:709.9739990234375px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%889.14.43.png"/></a></figure><h2 id="2408bfda-6c40-81df-8c53-f4f0219e8662" class="">🎬 看起来是批文</h2><h2 id="2408bfda-6c40-8170-8b8d-eb385f4ef4e6" class="">实际上是——“资本舞台剧大圆满！”</h2><p id="2408bfda-6c40-8126-be10-f80b1c7fe5b5" class="">
+</p><blockquote id="2408bfda-6c40-810e-be96-d8987e521f92" class="">🎙️来来来！本次项目舞台剧《发债风云》正式落幕！</blockquote><p id="2408bfda-6c40-81b8-ba70-d58769bbb8e1" class="">
+</p><p id="2408bfda-6c40-81ee-8e3b-dc1a71bd95c1" class="">👏 主演阵容如下：</p><table id="2408bfda-6c40-811a-a719-fc7cc15eca82" class="simple-table"><thead class="simple-table-header"><tr id="2408bfda-6c40-8137-8950-ed136ad3fa8d"><th id="aITl" class="simple-table-header-color simple-table-header" style="width:236.203125px">角色</th><th id="UAKC" class="simple-table-header-color simple-table-header" style="width:221.9496612548828px">任务</th><th id="q^FH" class="simple-table-header-color simple-table-header">暗号</th></tr></thead><tbody><tr id="2408bfda-6c40-81f2-b539-c83f466194be"><td id="aITl" class="" style="width:236.203125px">🧞‍♂️ 华熙</td><td id="UAKC" class="" style="width:221.9496612548828px">编剧导演+主演一号</td><td id="q^FH" class="">“我们资产健康！”</td></tr><tr id="2408bfda-6c40-8170-9d39-eca84ecd015c"><td id="aITl" class="" style="width:236.203125px">👨‍💼 亚太/大信会计师事务所</td><td id="UAKC" class="" style="width:221.9496612548828px">道具组</td><td id="q^FH" class="">“虚增成本较大，请审慎考虑……”</td></tr><tr id="2408bfda-6c40-810c-8686-fb4e9cc784a7"><td id="aITl" class="" style="width:236.203125px">💼 西部证券</td><td id="UAKC" class="" style="width:221.9496612548828px">演出统筹</td><td id="q^FH" class="">“报告已收，马上上报。”</td></tr><tr id="2408bfda-6c40-8183-ae64-e8528d8fb5ec"><td id="aITl" class="" style="width:236.203125px">⚖️ 北京通商律师事务所</td><td id="UAKC" class="" style="width:221.9496612548828px">法务顾问</td><td id="q^FH" class="">“风险我们已经写进脚注了！”</td></tr></tbody></table><p id="2408bfda-6c40-81e2-a716-fa62c236aeea" class="">
+</p><h3 id="2408bfda-6c40-8143-9dd2-f8c66fbccab4" class="">🧠 他们每一个都说：“我没造假。”</h3><p id="2408bfda-6c40-81be-b611-e75ff302e6f6" class="">但他们每一个也都知道——</p><blockquote id="2408bfda-6c40-813f-9b45-c8d2e5270536" class="">只有我们一起配合，这出戏才能顺利演完。</blockquote><p id="2408bfda-6c40-8198-8812-e5667367ab8c" class="">
+</p><hr id="2408bfda-6c40-8191-8ebe-e9db2b4bcdf8"/><h1 id="2408bfda-6c40-8160-aeff-fbdade53b64b" class=""><strong>☎️ 孙力军傅政华政治团伙的强大的影响力</strong></h1><p id="2408bfda-6c40-81eb-b764-f0849f06bb4f" class="">
+</p><blockquote id="2408bfda-6c40-818d-8fe9-dc7140eecbcd" class="">一个电话就能搞掂，时间稍微推一会，金矿上市不能受影响！</blockquote><figure id="2408bfda-6c40-8160-ab6c-f35fabe600bd"><a href="http://www.csrc.gov.cn/beijing/c103560/c1535985/content.shtml" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">中国证券监督管理委员会北京监管局行政监管措施决定书（华熙昕宇投资有限公司）_北京监管局</div></div><div class="bookmark-href"><img src="http://www.csrc.gov.cn/favicon.ico" class="icon bookmark-icon"/>http://www.csrc.gov.cn/beijing/c103560/c1535985/content.shtml</div></div></a></figure><figure id="2408bfda-6c40-81f1-96e2-c46f0e31d418" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%8810.19.21.png"><img style="width:709.982666015625px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/%E6%88%AA%E5%B1%8F2025-07-25_%E4%B8%8B%E5%8D%8810.19.21.png"/></a></figure><p id="2408bfda-6c40-81ef-ac6f-dd0e778b47a0" class="">
+</p><figure id="2408bfda-6c40-81d7-b6f0-eb6eb2f1d569" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/047.jpg"><img style="width:709.982666015625px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/047.jpg"/></a></figure><hr id="2408bfda-6c40-8182-be71-f88f8cdfe69e"/><p id="2408bfda-6c40-814c-87b9-f98e6bacc174" class="">
+</p><ul id="2408bfda-6c40-813a-92e7-c8b51e81f560" class="bulleted-list"><li style="list-style-type:disc">📌 <strong>事件背景</strong><ul id="2408bfda-6c40-8157-8164-fc28ac76fdab" class="bulleted-list"><li style="list-style-type:circle">2017年4月，华熙昕宇通过二级市场最高位精准减持金隅股份，获利3.828亿。</li></ul></li></ul><ul id="2408bfda-6c40-812b-95be-f79ae75a490e" class="bulleted-list"><li style="list-style-type:disc">💰 <strong>神操作是怎么做账的？</strong><ul id="2408bfda-6c40-8190-8114-c2e1c148c462" class="bulleted-list"><li style="list-style-type:circle">将投资收益伪装成其他应收款+虚增成本，完美避税</li></ul></li></ul><ul id="2408bfda-6c40-8188-b980-c41b87b4ab47" class="bulleted-list"><li style="list-style-type:disc">🧾 <strong>审计方是谁？忠诚到令人窒息！</strong><ul id="2408bfda-6c40-812b-b85f-c9e1c1b34416" class="bulleted-list"><li style="list-style-type:circle">关键是群发邮件中说“虚增成本较大，请慎重考虑”</li></ul></li></ul><ul id="2408bfda-6c40-81b4-8971-da28ab8a54ca" class="bulleted-list"><li style="list-style-type:disc">🧑‍💼 <strong>他们的邮件我们都看到了</strong><ul id="2408bfda-6c40-81d2-ac07-f051aa000892" class="bulleted-list"><li style="list-style-type:circle">券商、会计师事务所、律所一一忠诚的配合</li></ul></li></ul><ul id="2408bfda-6c40-8112-9f33-d448b9cd7104" class="bulleted-list"><li style="list-style-type:disc">🔥 <strong>这不是剧本，是报告；这不是审计，是共谋。</strong></li></ul><ul id="2408bfda-6c40-81eb-82e5-ca1ae74c6fe2" class="bulleted-list"><li style="list-style-type:disc">📎 <strong>结语</strong><ul id="2408bfda-6c40-814f-a2ab-c883175f6fe3" class="bulleted-list"><li style="list-style-type:circle">这些截图，还有很多很多的内容，是David在七年举报中，最想让你们看到的真相。</li></ul></li></ul><hr id="2408bfda-6c40-81d1-9437-e3ceabb17ef0"/><h1 id="2408bfda-6c40-8179-89fd-e1a83f990f90" class="">你看的不是一份文件，而是一段真相的印记</h1><p id="2408bfda-6c40-8189-8614-f8f7a5079a0d" class="">
+</p><p id="2408bfda-6c40-815b-a356-de259aba3b0c" class="">在孙立军傅建华政治团伙和孙德顺强大影响力下，这些财务造假，欺诈发行债券，巨额逃税的证据，曾被藏匿、涂改，甚至让人噤声</p><p id="2408bfda-6c40-818a-a3dd-db50a1740227" class="">
+</p><p id="2408bfda-6c40-810b-8906-ce29f8de5f36" class="">如今，这些卷宗的每一个字，背后都牵扯着一个价值千亿的资本骗局，我将它们保存在区块链上，成为无法篡改的“数字档案”，并在此公之于众。</p><p id="2408bfda-6c40-8195-9a9e-ca7c130888e6" class="">
+</p><p id="2408bfda-6c40-81e6-b772-ee8fd20b6082" class="">因为我相信，在阳光下，一切阴影终将无所遁形。</p><div id="2408bfda-6c40-819f-b7a7-da41f0a2b95f" class="column-list"><div id="2408bfda-6c40-8153-99a7-d1d0f03e8fc8" style="width:2.5%" class="column"><p id="2408bfda-6c40-81fd-bb00-c1c3b0a20a45" class="">
+</p></div><div id="2408bfda-6c40-8136-8a94-e3abd306746c" style="width:89.99999999999999%" class="column"><blockquote id="2408bfda-6c40-8169-a4e9-e296bcdb2cf8" class="">在这里，数字会说话，文件会呼吸。<br/>谎言有千种版本，但真相只有一个。<br/>这不是故事，这是卷宗<br/></blockquote></div><div id="2408bfda-6c40-8175-b05a-d5de9c61d621" style="width:2.5%" class="column"><p id="2408bfda-6c40-8184-b5ae-f5a80c440d71" class="">
+</p></div><div id="2408bfda-6c40-81b5-9982-cc85809362b3" style="width:2.5%" class="column"><p id="2408bfda-6c40-81a5-9c4a-fb4a370c0628" class="">
+</p></div><div id="2408bfda-6c40-815b-8193-c766cee3d24d" style="width:2.5%" class="column"><p id="2408bfda-6c40-817e-a9ff-ffd012732f2d" class="">
+</p></div></div><p id="2408bfda-6c40-81e4-bfd2-e3a41ad944ca" class="">你的每一次点击和分享，或许就能让更多的真相被看见</p><p id="2408bfda-6c40-81e9-84c0-ea8f32de1f19" class="">
+</p><hr id="2408bfda-6c40-81b0-8160-c92dfabf8b3c"/><h1 id="2408bfda-6c40-81f0-823c-e938bdd770f5" class="">真相揭秘 (即将上线)</h1><p id="2408bfda-6c40-814d-9909-d8c73fe24867" class="">
+</p><p id="2408bfda-6c40-81eb-b4ab-f4c993a2df67" class="">欢迎进入真相揭秘室。你的每一次关注，都是对真相的一份支持</p><p id="2408bfda-6c40-810d-b3c3-d6f00ce06efd" class="">
+</p><div id="2408bfda-6c40-8140-ac58-faf150a75519" class="column-list"><div id="2408bfda-6c40-8185-8e98-ec4c00c0c01d" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8105-a89a-d9d160f206c9"><div style="width:100%"><p id="2408bfda-6c40-8196-8060-d94ef589f995" class=""><mark class="highlight-orange"><strong>🟠 </strong></mark><mark class="highlight-orange"><code><strong>001 | 合谋完整名单</strong></code></mark></p><h2 id="2408bfda-6c40-8121-8581-ed1f88e6af11" class=""><strong>卷宗名: </strong>熙和项目通讯录</h2><h3 id="2408bfda-6c40-810f-aeed-f4fd4398ac13" class="">内容摘要</h3><p id="2408bfda-6c40-813d-9602-f327eaca59b8" class="">从公司核心高管，到国内顶尖的会计师、律师、券商……层层揭开这场系统性财务造假背后，那张看不见的利益关系网与每一个参与者的角色</p></div></figure></div><div id="2408bfda-6c40-8157-89df-cb3f23d5ff05" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-812d-bcf0-e44a50fa547b"><div style="width:100%"><p id="2408bfda-6c40-810d-8751-efa9def1d58f" class=""><mark class="highlight-orange"><strong>🟠 </strong></mark><mark class="highlight-orange"><code><strong>002|隐瞒和虚假承诺</strong></code></mark></p><h2 id="2408bfda-6c40-816b-91ed-d18d5c950330" class=""><strong>卷宗名: </strong>锦州银行股权代持运营包</h2><h3 id="2408bfda-6c40-81ef-881d-f4681f7f7dc3" class="">内容摘要</h3><p id="2408bfda-6c40-81a2-87ac-d29d89e84f65" class="">独家披露锦州银行（00416.HK）IPO背后，华熙昕宇如何通过隐瞒关键股权代持协议3000万股，成功欺骗中国证监会，香港联交所与全球投资者</p></div></figure></div></div><div id="2408bfda-6c40-810d-b05a-ea3896a75002" class="column-list"><div id="2408bfda-6c40-815b-80d1-ecf5453fbd15" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-812c-979f-dfc083c1071b"><div style="width:100%"><p id="2408bfda-6c40-81e2-a29a-eef069ed08dc" class=""><mark class="highlight-orange"><strong>🟠 </strong></mark><mark class="highlight-orange"><code><strong>003|财务造假欺诈发行</strong></code></mark></p><h2 id="2408bfda-6c40-8118-8461-d96dbb2694fb" class=""><strong>卷宗名: </strong>可交换债券欺诈发行证据包</h2><h3 id="2408bfda-6c40-817e-a9e6-fa9af685331e" class="">内容摘要</h3><p id="2408bfda-6c40-8105-8860-c0df826bb92e" class="">深度剖析2017年半年报，看一笔仅123万的真实营收，如何被精心“包装”成2.78亿的亮眼业绩，并最终骗取18亿债券发行批文</p></div></figure><p id="2408bfda-6c40-8168-bf9c-f62cc7459677" class="">
+</p></div><div id="2408bfda-6c40-8132-bfb3-d61f65463362" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81a5-9e07-cfd2453a5ee9"><div style="width:100%"><p id="2408bfda-6c40-81ff-a1f4-c513ae85a4b5" class=""><mark class="highlight-orange"><strong>🟠 </strong></mark><mark class="highlight-orange"><code><strong>004|“教科书式”巨额逃税</strong></code></mark></p><h2 id="2408bfda-6c40-81a5-b0a8-d797acc4e42c" class=""><strong>卷宗名: </strong>审计报告与基金运作证据包</h2><h3 id="2408bfda-6c40-81e0-b6a6-c225c7e21596" class="">内容摘要</h3><p id="2408bfda-6c40-81b7-ab9c-dab50cd93d85" class="">追踪上亿资金的隐秘流向，揭露‘玻尿酸女王’如何利用复杂的基金分红与赎回操作，将巨额企业所得税在资本的盛宴中化为无形</p></div></figure><p id="2408bfda-6c40-81b6-ab58-ff4e20011905" class="">
+</p></div></div><hr id="2408bfda-6c40-81ba-8a85-d1565ab007e4"/><p id="2408bfda-6c40-814f-8c8c-c937f3bc15dd" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81d2-9c05-c16a368104c8"><div style="width:100%"><p id="2408bfda-6c40-81ec-9d05-fdc358545e33" class=""><mark class="highlight-orange"><strong>🟠 </strong></mark><mark class="highlight-orange"><code><strong>005|IPO虚假承诺和隐瞒大股东造假</strong></code></mark></p><h2 id="2408bfda-6c40-8155-806b-c11bf74a275d" class=""><strong>卷宗名: 华熙生物</strong><a href="http://688363.sh/">688363.sh</a> <strong>IPO虚假承诺证据包</strong></h2><h3 id="2408bfda-6c40-818d-a4ec-ffd89ec16289" class="">内容摘要</h3><p id="2408bfda-6c40-811c-9e1c-d503774e8757" class="">在华熙生物控股股东华熙昕宇被中国证监会立案调查期间，华熙生物（688363.SH）仍顺利登陆科创板，其招股说明书申报稿完全隐瞒了其大股东华熙昕宇上述的虚假承诺，财务造假，欺诈发行债券，巨额逃税，虚假信息披露等重大违法问题</p></div></figure><p id="2408bfda-6c40-8174-8ce3-d8f29ca9d151" class="">
+</p><p id="2408bfda-6c40-8109-a72d-d2f869dc43eb" class="">
+</p><hr id="2408bfda-6c40-817b-aeb9-cc90ea4326d5"/><h1 id="2408bfda-6c40-814c-8a4f-cfff7ae6334b" class="">多维叙事：一个真相，多种体验 </h1><p id="2408bfda-6c40-81e4-8498-f31321023660" class="">
+</p><blockquote id="2408bfda-6c40-81b6-a068-fd71d7cc8f04" class=""><mark class="highlight-default">2025年9月8日是我被</mark><mark class="highlight-red"><strong>华熙赵燕</strong></mark>和<strong>孙力军傅政华政治团伙</strong>中的原公安部经济犯罪侦查局高官<mark class="highlight-red"><strong>李长征</strong></mark><mark class="highlight-default">（现任华熙副总裁兼党委书记）陷害</mark><mark class="highlight-red"><strong>7</strong></mark><mark class="highlight-default">周年，届时我会将《玻尿酸女王那些事儿》原著，以及短剧，播客，有声书逐步公开给大家阅读，首发将在我的</mark><mark class="highlight-red"><strong>Youtube油管</strong></mark><mark class="highlight-default">，欢迎大家订阅支持分享，打开小铃铛，谢谢大家支持</mark></blockquote><p id="2408bfda-6c40-8136-9426-e138f4b588ff" class="">
+</p><div id="2408bfda-6c40-81e4-a4d7-f0b63e69e333" class="column-list"></div><div id="2408bfda-6c40-8105-85e3-e333a32d48a0" class="column-list"><div id="2408bfda-6c40-81b3-950d-c29f4ebe736c" style="width:50%" class="column"><figure id="2408bfda-6c40-8122-9725-c2761bc4cca1" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/68cf17e9-8337-41ce-b632-d1c5d3a95955.png"><img style="width:320px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/68cf17e9-8337-41ce-b632-d1c5d3a95955.png"/></a></figure><p id="2408bfda-6c40-81be-92ad-e59c781a6f73" class="">
+</p></div><div id="2408bfda-6c40-81e3-ae1d-f2d297059fbb" style="width:50%" class="column"><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81c5-8195-c56ec0e9751f"><div style="width:100%"><h3 id="2408bfda-6c40-81a8-977b-f8e5b1e555be" class=""><strong>听我读原著 </strong></h3><p id="2408bfda-6c40-81d0-9789-d9642feed96c" class="">关上灯，戴上耳机。让声音带你潜入这场资本漩涡的中心。从紧张的对峙到孤独的独白，用听觉感受每一个谎言的细节与真相的力量</p></div></figure><p id="2408bfda-6c40-812c-92d1-f0a4c764af9f" class="">
+</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-816d-9a1b-e6fdc2d84d24"><div style="width:100%"><h3 id="2408bfda-6c40-811a-b9e7-cbec21a1bc71" class="">追短剧</h3><p id="2408bfda-6c40-811d-b9b7-f5e437994ad1" class="">想看更直观的交锋？当文字的暗战化为光影的对决，人性的贪婪与正义的挣扎，将在这里淋漓尽致。每一集，都是一次心跳加速的体验</p></div></figure></div></div><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81f2-be36-e9e310bef0de"><div style="width:100%"><h3 id="2408bfda-6c40-8166-a75b-c1cef556e27b" class=""><strong><a href="https://www.notion.so/21d8bfda6c4081a780e8dc9096f8144d?pvs=21">看证据</a></strong></h3><p id="2408bfda-6c40-8155-ad6a-d9b7070fbc7b" class="">这不是剧本，这是卷宗。眼见为实，点击进入真相档案室</p></div></figure><p id="2408bfda-6c40-8158-bc82-c565e194f7f8" class="">
+</p><h2 id="2408bfda-6c40-81b7-a38d-f7726488bb3b" class="">📬 订阅我们</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81f4-8aa6-cdadde25ed00"><div style="width:100%"><p id="2408bfda-6c40-81a3-9432-cbea770c5285" class="">想比别人早一步听见真相？</p><blockquote id="2408bfda-6c40-81d9-8f69-ef15c32842c7" class="">➜ 立即订阅<mark class="highlight-red"><strong>玻尿酸女王那些事儿</strong></mark>的Youtbe, 视频号，听我读原著，追短剧<p id="2408bfda-6c40-818d-82fd-fc3880316c67" class="">➜ [每周一章｜与David一起进入<mark class="highlight-red"><strong>玻尿酸女王那些事儿</strong></mark>]</p></blockquote><p id="2408bfda-6c40-81c4-8071-c59db25a4a6a" class="">
+</p><div id="2408bfda-6c40-8153-bbd5-c2d480d2513b" class="column-list"><div id="2408bfda-6c40-813a-9e62-f8c7f05294a1" style="width:33.33333333333333%" class="column"><figure id="2408bfda-6c40-8178-811d-fccc45f48c5f" class="image"><a href="%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E6%88%AA%E5%B1%8F2025-06-28_%E4%B8%8B%E5%8D%884.38.18.png"><img style="width:241.328125px" src="%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E6%88%AA%E5%B1%8F2025-06-28_%E4%B8%8B%E5%8D%884.38.18.png"/></a></figure></div><div id="2408bfda-6c40-81b5-961c-e5945ffffed2" style="width:33.33333333333333%" class="column"><p id="2408bfda-6c40-81cc-865c-f9b1a23e21bb" class="">请在YouTube和微信视频号搜索：</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81b6-a5a4-e5e72ff4dce5"><div style="width:100%"><p id="2408bfda-6c40-8104-8cae-c1f49426b592" class=""><mark class="highlight-red"><strong>玻尿酸女王那些事儿</strong></mark></p></div></figure></div><div id="2408bfda-6c40-81c3-b096-d646f6de4104" style="width:33.33333333333333%" class="column"><figure id="2408bfda-6c40-8148-b53b-e20137e37633" class="image"><a href="%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E8%A7%86%E9%A2%91%E5%8F%B7.png"><img style="width:105.1953125px" src="%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E8%A7%86%E9%A2%91%E5%8F%B7.png"/></a></figure></div></div></div></figure><p id="2408bfda-6c40-812c-a79a-ea1dc4b14a1e" class="">
+</p><hr id="2408bfda-6c40-8137-afcc-f1666dc1dc74"/><p id="2408bfda-6c40-81fc-9d45-ddea105f977c" class="">
+</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81b4-a391-e5beae9ad732"><div style="width:100%"><h1 id="2408bfda-6c40-819d-9b81-d561738a0198" class=""><strong>支持我</strong></h1><p id="2408bfda-6c40-81f1-98b1-e01a30816df6" class="">
+</p><blockquote id="2408bfda-6c40-81b7-b966-c8873f20f5b4" class=""><mark class="highlight-red"><strong>一起为真相，续一盏灯火</strong></mark></blockquote><p id="2408bfda-6c40-81f4-af98-d8fb5659a696" class="">
+</p><p id="2408bfda-6c40-81ec-86b0-c9b5c30b4bce" class=""><strong>我一直靠着意志力，努力还原每一个细节。<br/>这背后，是无数个深夜的撰写、剪辑，<br/>是我面对真实时的挣扎与犹豫。<br/></strong></p><p id="2408bfda-6c40-813f-8785-d2fe1dfc47d5" class=""><strong>我需要你的力量。</strong></p><p id="2408bfda-6c40-8171-8367-edd8815c174e" class=""><strong>如果你听懂了我的讲述，<br/>如果你愿意陪我继续走下去，<br/>请随心、或用一杯咖啡，<br/>支持我，继续说出那些不敢被说出的真相。<br/></strong></p><div id="2408bfda-6c40-81f4-9138-c64ba859f91a" class="column-list"><div id="2408bfda-6c40-81b2-82ca-f85edf727473" style="width:50%" class="column"><h3 id="2408bfda-6c40-8133-96d7-fb4e2b08bbc7" class=""><strong><a href="https://donate.stripe.com/cNi28j9e1gzNf5EdLBcfK0d">成为并肩作战的“战友“</a></strong></h3><h3 id="2408bfda-6c40-8129-87ff-c056dc664f73" class="block-color-red"><strong><a href="https://donate.stripe.com/9B65kvfCpcjxbTs9vlcfK0f">点击支持我</a></strong></h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8147-a5bf-f3c7bc686644"><div style="width:100%"><figure id="2408bfda-6c40-8102-a62b-f7ba784b37d3" class="image"><a href="../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/1.jpg"><img style="width:1080px" src="../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/1.jpg"/></a></figure></div></figure></div><div id="2408bfda-6c40-81d8-9413-e08045b3f774" style="width:50%" class="column"><h3 id="2408bfda-6c40-811f-9bdf-de5699d01e0a" class=""><strong>用最熟悉的方式传递温暖</strong></h3><h3 id="2408bfda-6c40-8180-9156-cd082d7a0f19" class=""><mark class="highlight-red">扫描二维码鼓励我</mark></h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81dd-92d0-e8074a5ea634"><div style="width:100%"><figure id="2408bfda-6c40-8194-85d3-ea0d55a42abf" class="image"><a href="../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/2.jpg"><img style="width:1080px" src="../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/2.jpg"/></a></figure></div></figure></div></div><p id="2408bfda-6c40-810c-9de7-dc7fc5869c06" class="">
+</p><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81a2-ba95-f75f08a6105f"><div style="width:100%"><div id="2408bfda-6c40-818b-abea-f9f8386bc5d9" class="column-list"><div id="2408bfda-6c40-8119-a7f1-ca9244c4ffb8" style="width:25%" class="column"><p id="2408bfda-6c40-8127-96f1-f460b4b5a5ea" class="">
+</p></div><div id="2408bfda-6c40-8194-a856-ea63549b5c9e" style="width:79.16666666666667%" class="column"><figure id="2408bfda-6c40-814b-ae18-e62e6930752d" class="image"><a href="https://anytype.io/assets/pricing/donate.svg"><img src="https://anytype.io/assets/pricing/donate.svg"/></a></figure></div><div id="2408bfda-6c40-81e0-a326-fa378318ab90" style="width:4.166666666666666%" class="column"><p id="2408bfda-6c40-81c5-b8be-e2d5bdd9b99a" class="">
+</p></div></div></div></figure><div id="2408bfda-6c40-81cc-8a23-fadb7a2ae1af" class="column-list"><div id="2408bfda-6c40-81de-8c4e-d5bd5e907c76" style="width:100%" class="column"></div></div></div></figure><p id="2408bfda-6c40-817c-919b-fd39de6679b4" class="">
+</p><hr id="2408bfda-6c40-814b-b90a-d5ae72c953cb"/><h1 id="2408bfda-6c40-81fa-b687-fde5adef5b3a" class=""><mark class="highlight-orange"><mark class="highlight-blue_background"><strong>你看的是剧，我演的是人生</strong></mark></mark></h1><p id="2408bfda-6c40-819f-b976-f4e41b7a838c" class="">
+</p><figure id="2408bfda-6c40-81c6-b7a7-e19b113f33bf" class="image"><a href="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/001_%E5%89%AF%E6%9C%AC_(6).png"><img style="width:2560px" src="%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/001_%E5%89%AF%E6%9C%AC_(6).png"/></a></figure><p id="2408bfda-6c40-81fe-ad9a-f5d499cd59cd" class="">
+</p><h3 id="2408bfda-6c40-8147-bcaa-e38cd5c70905" class=""><strong>每一秒，都是一个无法撤回的真相。</strong></h3><h3 id="2408bfda-6c40-81a9-82e1-e20d55df4b9f" class=""><strong>资本的游戏，良知的代价</strong></h3><p id="2408bfda-6c40-81c4-8bd3-fab9374c6089" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-812e-8d0f-fdb8e8a1dfda"><div style="width:100%"><p id="2408bfda-6c40-814a-bbfb-fff9730639e8" class="">这不仅是一部剧，更是一段真实的亲身经历</p><p id="2408bfda-6c40-8114-9c21-f1687208792f" class="">一位千亿上市公司的资本操盘手，如何一步步参与华熙的财务造假，欺诈发行债券，并为其募集了6年期、年化1.5%利率的5亿人民币。。</p><p id="2408bfda-6c40-8129-ac54-e7718591ff86" class=""><strong>之后，又沦为被赵燕以及其背后的孙力军傅政华政治团伙势力追杀的吹哨人。。</strong></p><p id="2408bfda-6c40-81dc-8006-c625d0b393d9" class="">一场精心设计的财务骗局，背后牵扯出怎样惊天的权力网络？欢迎进入《玻尿酸女王那些事儿》，在这里，每一集都是真实发生过的惊心动魄。</p></div></figure><p id="2408bfda-6c40-81cc-9ce8-ef8ab2379db5" class="">
+</p><figure class="block-color-default_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8163-beec-e1482281c7f0"><div style="font-size:1.5em"><span class="icon">🏠</span></div><div style="width:100%"><p id="2408bfda-6c40-81d4-b1b0-c72b336c7082" class=""><a href="../bnsqueen-html%202408bfda6c408077b2f9e1d4b0bfbf42.html">首页</a> |  <mark class="highlight-orange_background"><a href="%E5%90%AC%E6%95%85%E4%BA%8B%E5%90%AC%E8%A7%A3%E8%AF%BB%202408bfda6c4081c29794f88d68b9c4d9.html">王牌播客</a></mark> | <mark class="highlight-orange_background"><a href="%E8%B5%84%E6%9C%AC%E6%88%98%E5%9C%BA%202408bfda6c4081a9a943eb3159538427.html">第一卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%85%A5%E5%B1%80%E5%BA%84%E8%82%A1%202408bfda6c40813ca23be3f18606f7b6.html">第二卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%B8%82%E5%80%BC%E7%AE%A1%E7%90%86%202408bfda6c4081d9bc48fd2fdac93d3f.html">第三卷</a></mark> | <mark class="highlight-orange_background"><a href="%E9%BB%91%E5%B9%95%E4%B9%8B%E4%B8%8B%202408bfda6c4081818c63e9e70dfa09af.html">第四卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%A5%96%E9%87%91%E9%99%B7%E9%98%B1%E4%B8%8E%E5%AE%9A%E7%82%B9%E6%B8%85%E9%99%A4%202408bfda6c4081589958f8b1c6172040.html">第五卷</a></mark> | <mark class="highlight-orange_background"><a href="%E5%9C%A8%E7%9C%9F%E7%9B%B8%E7%9A%84%E8%BE%B9%E5%A2%83%202408bfda6c40812cad26c45720a90c28.html">第六卷</a></mark> | <mark class="highlight-orange_background"><a href="%E7%9C%9F%E7%9B%B8%E6%B5%AE%E5%87%BA%E6%B0%B4%E9%9D%A2%20%E6%AD%A3%E4%B9%89%E4%BB%8D%E5%9C%A8%E6%BD%9C%E6%B0%B4%202408bfda6c4081c2aa00e2dde6434e5c.html">第七卷</a></mark> | <mark class="highlight-orange_background"><a href="%E6%AD%A3%E4%B9%89%E5%B7%B2%E8%AF%BB%20%E4%B8%8D%E5%9B%9E%202408bfda6c4081b491ccc08ee61b3973.html">第八卷</a></mark> | <mark class="highlight-orange_background"><a href="%E4%B8%BA%E7%9C%9F%E7%9B%B8%E7%BB%AD%E4%B8%80%E6%9D%AF%E7%81%AF%E7%81%AB%202408bfda6c4081ccbe1dc68fa8815ab5.html">支持我</a></mark> | </p></div></figure><p id="2408bfda-6c40-81b3-966c-e45a212bb998" class="">
+</p><div id="2408bfda-6c40-810e-a18d-f2247afdb8ad" class="column-list"><div id="2408bfda-6c40-81c0-bbce-e5d9ea57450d" style="width:4.166666666666666%" class="column"><p id="2408bfda-6c40-81ab-b747-e6f13799e9f1" class="">
+</p></div><div id="2408bfda-6c40-81ac-975c-f721cc058a9b" style="width:91.66666666666666%" class="column"><div id="2408bfda-6c40-812a-85f8-f1f9e8670642" class="column-list"><div id="2408bfda-6c40-81b5-aea7-cf895c01d458" style="width:78.125%" class="column"><p id="2408bfda-6c40-810c-9435-f69b73ebc90d" class="">
+</p><figure id="2408bfda-6c40-81b0-a3d3-c642360783dc" class="image"><a href="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.51.38.png"><img style="width:169.2447967529297px" src="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.51.38.png"/></a></figure></div><div id="2408bfda-6c40-8100-bdc7-cf1038ee07e9" style="width:106.25%" class="column"><figure id="2408bfda-6c40-8177-a858-cecae361f874" class="image"><a href="%E6%88%AA%E5%B1%8F2025-07-29_%E4%B8%8A%E5%8D%881.50.51.png"><img style="width:195.98959350585938px" src="%E6%88%AA%E5%B1%8F2025-07-29_%E4%B8%8A%E5%8D%881.50.51.png"/></a></figure><p id="2408bfda-6c40-81cb-aaab-c64e22a621df" class="">
+</p></div><div id="2408bfda-6c40-813e-8d1f-f4c29e1ab6e5" style="width:75%" class="column"><figure id="2408bfda-6c40-8101-b1ce-f0a4c7f7bd25" class="image"><a href="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.52.01.png"><img style="width:61.99653244018555px" src="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8B%E5%8D%881.52.01.png"/></a></figure></div><div id="2408bfda-6c40-81fa-be57-f18e2ec5796c" style="width:56.249999999999986%" class="column"><figure id="2408bfda-6c40-81bf-a3c8-e06ff0f4a92d" class="image" style="text-align:left"><a href="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8A%E5%8D%8810.04.48.png"><img style="width:74.14930725097656px" src="%E6%88%AA%E5%B1%8F2025-07-28_%E4%B8%8A%E5%8D%8810.04.48.png"/></a></figure></div></div><p id="2408bfda-6c40-8115-862e-e5255e682518" class="">
+</p></div><div id="2408bfda-6c40-81a6-a29b-c1cfaaec002d" style="width:4.166666666666669%" class="column"><p id="2408bfda-6c40-81aa-9549-e4d855738822" class="">
+</p></div></div><hr id="2408bfda-6c40-81a4-bfa9-fa2da485a9e6"/><p id="2408bfda-6c40-8117-8fff-ede6dec411c8" class=""><mark class="highlight-gray"><strong>© 2025 玻尿酸女王那些事儿, David | 作者/华熙生物吹哨人/被陷害的犯罪嫌疑人</strong></mark></p><p id="2408bfda-6c40-812c-9f17-d25ac524e10c" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

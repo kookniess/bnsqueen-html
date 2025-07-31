@@ -1,0 +1,701 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>第007章 猎人与新猎物的试探</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2408bfda-6c40-812c-bf98-e00544b1edf2" class="page sans"><header><h1 class="page-title">第007章 猎人与新猎物的试探</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><div data-testid="/icons/clock_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/clock_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/clock_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>创建时间</th><td><time>@2025年7月31日 11:20</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><div data-testid="/icons/list_gray.svg" style="width:14px;height:14px;flex-shrink:0;transform:scale(1.2);mask:url(/icons/list_gray.svg?mode=light) no-repeat center;-webkit-mask:url(/icons/list_gray.svg?mode=light) no-repeat center;background-color:rgba(71, 70, 68, 0.6);fill:rgba(71, 70, 68, 0.6)"></div></span>标签</th><td><span class="selected-value select-value-color-red">第二卷</span></td></tr></tbody></table></header><div class="page-body"><figure id="2408bfda-6c40-812b-8231-d4be9b36d685" class="image"><a href="../../%E8%B5%84%E6%9C%AC%E6%88%98%E5%9C%BA%202408bfda6c4081a9a943eb3159538427/%E7%AC%AC%E4%B8%80%E5%8D%B7%202408bfda6c408134982ad68c39395c65/%E7%AC%AC007%E7%AB%A0%20%E7%8C%8E%E4%BA%BA%E4%B8%8E%E6%96%B0%E7%8C%8E%E7%89%A9%E7%9A%84%E8%AF%95%E6%8E%A2%202408bfda6c408105a663cf6a9c13f8ec/007.png"><img style="width:710.0000610351562px" src="../../%E8%B5%84%E6%9C%AC%E6%88%98%E5%9C%BA%202408bfda6c4081a9a943eb3159538427/%E7%AC%AC%E4%B8%80%E5%8D%B7%202408bfda6c408134982ad68c39395c65/%E7%AC%AC007%E7%AB%A0%20%E7%8C%8E%E4%BA%BA%E4%B8%8E%E6%96%B0%E7%8C%8E%E7%89%A9%E7%9A%84%E8%AF%95%E6%8E%A2%202408bfda6c408105a663cf6a9c13f8ec/007.png"/></a></figure><p id="2408bfda-6c40-81fc-a92c-d59406e76a8f" class="">
+</p><h2 id="2408bfda-6c40-81bb-a06e-f629c79d8367" class=""><strong>摘要</strong></h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81c6-8288-f35c5b0e82fe"><div style="width:100%"><p id="2408bfda-6c40-812b-8c58-e52f26af6eb4" class="">本章描绘了David在接受职业邀请后，首次前往华熙国际中心与董事长赵燕会面的过程。赵燕作为华熙生物的灵魂人物，被资本圈誉为“玻尿酸女王”，凭借强势风格与资本运作能力掌控全局。然而，公司虽有高增长与利润表现，却长期因股权集中、缺乏流动性而遭遇“庄股”质疑。赵燕试图通过引入David这样的专业资本市场人士重塑华熙在资本市场中的形象，实现股价提升与管理层股权激励的绑定。但在这场看似正常的高管引才中，隐藏着更复杂的金融交易——赵燕与“金融魔术师”孙德顺之间疑似存在巨额利益输送：瑕疵资产用于抵押贷款，影子公司暴利操作已悄然启动，而David此刻尚未察觉，他只看到了职业机遇，却未意识到自己即将步入的是一个惊心动魄的资本陷阱。</p></div></figure><p id="2408bfda-6c40-8163-b0cd-c6815021a6e0" class="">
+</p><hr id="2408bfda-6c40-8183-a78c-e1956c920db7"/><h1 id="2408bfda-6c40-8127-b3ab-c035be24a387" class="">多维叙事：一个真相，多种体验 </h1><p id="2408bfda-6c40-8198-814d-c44c8791ed89" class="">
+</p><blockquote id="2408bfda-6c40-81cb-84a7-fbe863a8b8d9" class=""><mark class="highlight-default">2025年9月8日是我被</mark><mark class="highlight-red"><strong>华熙赵燕</strong></mark>和<strong>孙力军傅政华政治团伙</strong>中的原公安部经济犯罪侦查局高官<mark class="highlight-red"><strong>李长征</strong></mark><mark class="highlight-default">（现任华熙副总裁兼党委书记）陷害</mark><mark class="highlight-red"><strong>7</strong></mark><mark class="highlight-default">周年，届时我会将《玻尿酸女王那些事儿》原著，以及短剧，播客，有声书逐步公开给大家阅读，首发将在我的</mark><mark class="highlight-red"><strong>Youtube油管</strong></mark><mark class="highlight-default">，欢迎大家订阅支持分享，打开小铃铛，谢谢大家支持</mark></blockquote><p id="2408bfda-6c40-81db-a1bb-d9c3a62db559" class="">
+</p><div id="2408bfda-6c40-81db-bf29-db14a4234cf7" class="column-list"></div><div id="2408bfda-6c40-814f-a116-c21565fd3443" class="column-list"><div id="2408bfda-6c40-818e-961d-e0b198116eda" style="width:50%" class="column"><figure id="2408bfda-6c40-81a0-8495-cbbbf590d821" class="image"><a href="../../%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/68cf17e9-8337-41ce-b632-d1c5d3a95955.png"><img style="width:320px" src="../../%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/68cf17e9-8337-41ce-b632-d1c5d3a95955.png"/></a></figure><p id="2408bfda-6c40-81cc-9024-fa6cd0c131b1" class="">
+</p></div><div id="2408bfda-6c40-8103-bc0a-f9466835b733" style="width:50%" class="column"><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81a3-9d81-eda998831471"><div style="width:100%"><h3 id="2408bfda-6c40-81f6-8d53-fd2f9ea33ff0" class=""><strong>听我读原著 </strong></h3><p id="2408bfda-6c40-8139-9e35-e8a71b25420c" class="">关上灯，戴上耳机。让声音带你潜入这场资本漩涡的中心。从紧张的对峙到孤独的独白，用听觉感受每一个谎言的细节与真相的力量</p></div></figure><p id="2408bfda-6c40-81ac-9cb3-e64a52da4a48" class="">
+</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-812c-a832-c261cb702c3c"><div style="width:100%"><h3 id="2408bfda-6c40-8135-9f3e-e0162b2a5810" class="">追短剧</h3><p id="2408bfda-6c40-815a-8b4f-c361a3fa4155" class="">想看更直观的交锋？当文字的暗战化为光影的对决，人性的贪婪与正义的挣扎，将在这里淋漓尽致。每一集，都是一次心跳加速的体验</p></div></figure></div></div><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81bb-862a-e0ef93470611"><div style="width:100%"><h3 id="2408bfda-6c40-810b-b882-f14675247d86" class=""><strong><a href="https://www.notion.so/23d8bfda6c4081f3b6dffcfa3ba383c4?pvs=21">看证据</a></strong></h3><p id="2408bfda-6c40-8165-b5c4-f38d642cd27e" class="">这不是剧本，这是卷宗。眼见为实，点击进入真相档案室</p></div></figure><p id="2408bfda-6c40-81bf-8a04-fafef445d822" class="">
+</p><h2 id="2408bfda-6c40-81c5-b479-c406f34b0407" class="">📬 订阅我们</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-811f-9d85-d9a740815f63"><div style="width:100%"><p id="2408bfda-6c40-819c-b53a-d4e3f8e894be" class="">想比别人早一步听见真相？</p><blockquote id="2408bfda-6c40-8175-bb3b-db38efdfbfae" class="">➜ 立即订阅<mark class="highlight-red"><strong>玻尿酸女王那些事儿</strong></mark>的Youtbe, 视频号，听我读原著，追短剧<p id="2408bfda-6c40-8137-a54d-cb5b59a245f1" class="">➜ [每周一章｜与David一起进入<mark class="highlight-red"><strong>玻尿酸女王那些事儿</strong></mark>]</p></blockquote><p id="2408bfda-6c40-814e-ad60-de5bc9405422" class="">
+</p><div id="2408bfda-6c40-8136-b72b-cbfbae8c9e04" class="column-list"><div id="2408bfda-6c40-81bb-ba03-eba46eed87bc" style="width:33.33333333333333%" class="column"><figure id="2408bfda-6c40-810b-b8af-fbbb387a1e67" class="image"><a href="../../%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E6%88%AA%E5%B1%8F2025-06-28_%E4%B8%8B%E5%8D%884.38.18.png"><img style="width:241.328125px" src="../../%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E6%88%AA%E5%B1%8F2025-06-28_%E4%B8%8B%E5%8D%884.38.18.png"/></a></figure></div><div id="2408bfda-6c40-8152-bd93-cea32b47c037" style="width:33.33333333333333%" class="column"><p id="2408bfda-6c40-8192-8c7c-ed13d5c79636" class="">请在YouTube和微信视频号搜索：</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8133-b6ed-e0626782757c"><div style="width:100%"><p id="2408bfda-6c40-81bd-9d26-dc1590013a3d" class=""><mark class="highlight-red"><strong>玻尿酸女王那些事儿</strong></mark></p></div></figure></div><div id="2408bfda-6c40-81d3-937d-c06e9a1c8747" style="width:33.33333333333333%" class="column"><figure id="2408bfda-6c40-81b1-9d41-eddcec1dbddb" class="image"><a href="../../%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E8%A7%86%E9%A2%91%E5%8F%B7.png"><img style="width:105.1953125px" src="../../%E2%80%94%20%5B%20%E5%85%B3%E4%BA%8E%E6%88%91%20%5D%202408bfda6c40812e8ed7f59e7fad3bde/%E8%A7%86%E9%A2%91%E5%8F%B7.png"/></a></figure></div></div></div></figure><p id="2408bfda-6c40-8153-9974-c24402904be8" class="">
+</p><hr id="2408bfda-6c40-816c-ba88-efee87c90bdd"/><p id="2408bfda-6c40-81ed-950e-c2f8b8aea117" class="">
+</p><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-8131-8e07-e5af3e94b70a"><div style="width:100%"><h1 id="2408bfda-6c40-816c-8835-cb098d71ce29" class=""><strong>支持我</strong></h1><p id="2408bfda-6c40-818b-aecf-c24c60ff4dac" class="">
+</p><blockquote id="2408bfda-6c40-81b0-ac9b-cbba012998e4" class=""><mark class="highlight-red"><strong>一起为真相，续一盏灯火</strong></mark></blockquote><p id="2408bfda-6c40-81cf-a978-eb4da036059f" class="">
+</p><p id="2408bfda-6c40-81c5-8258-c1563de76c20" class=""><strong>我一直靠着意志力，努力还原每一个细节。<br/>这背后，是无数个深夜的撰写、剪辑，<br/>是我面对真实时的挣扎与犹豫。<br/></strong></p><p id="2408bfda-6c40-814f-b9b4-ca1692ad5f87" class=""><strong>我需要你的力量。</strong></p><p id="2408bfda-6c40-81b1-96aa-fbd1ca89b30d" class=""><strong>如果你听懂了我的讲述，<br/>如果你愿意陪我继续走下去，<br/>请随心、或用一杯咖啡，<br/>支持我，继续说出那些不敢被说出的真相。<br/></strong></p><div id="2408bfda-6c40-81d6-8185-d1fa9628c418" class="column-list"><div id="2408bfda-6c40-813d-b38b-c7fd117fae5a" style="width:50%" class="column"><h3 id="2408bfda-6c40-8162-8b03-e6a7dfe937dd" class=""><strong><a href="https://donate.stripe.com/cNi28j9e1gzNf5EdLBcfK0d">成为并肩作战的“战友“</a></strong></h3><h3 id="2408bfda-6c40-81f3-9e67-cd21798d27e7" class="block-color-red"><strong><a href="https://donate.stripe.com/9B65kvfCpcjxbTs9vlcfK0f">点击支持我</a></strong></h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81d1-96bd-cc1d7d826cc7"><div style="width:100%"><figure id="2408bfda-6c40-81d9-9b63-df6b118e289f" class="image"><a href="../../../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/1.jpg"><img style="width:1080px" src="../../../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/1.jpg"/></a></figure></div></figure></div><div id="2408bfda-6c40-8180-a5b3-ff1190f3faba" style="width:50%" class="column"><h3 id="2408bfda-6c40-81d7-af87-fa0d208609dd" class=""><strong>用最熟悉的方式传递温暖</strong></h3><h3 id="2408bfda-6c40-8182-802c-ce3ee778edcf" class=""><mark class="highlight-red">扫描二维码鼓励我</mark></h3><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-812a-a947-fbe2d618d8be"><div style="width:100%"><figure id="2408bfda-6c40-8178-9bbc-d184e03cb250" class="image"><a href="../../../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/2.jpg"><img style="width:1080px" src="../../../Vercel%E7%89%88%E6%9C%AC-%E7%8E%BB%E5%B0%BF%E9%85%B8%E5%A5%B3%E7%8E%8B%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2021d8bfda6c408051a4c1c1388eb966dc/%E6%94%AF%E6%8C%81%E6%88%91%2021d8bfda6c4081368bfafb50e1396bc0/2.jpg"/></a></figure></div></figure></div></div><p id="2408bfda-6c40-8156-9a56-c42af4aa19bd" class="">
+</p><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-81c2-bdaa-c0486cdc509b"><div style="width:100%"><div id="2408bfda-6c40-8127-98d1-f81af12e3214" class="column-list"><div id="2408bfda-6c40-811f-bd05-fd2d57e464b3" style="width:25%" class="column"><p id="2408bfda-6c40-819c-9762-de92bba43e71" class="">
+</p></div><div id="2408bfda-6c40-814c-b0ec-f5c84da98a3b" style="width:79.16666666666667%" class="column"><figure id="2408bfda-6c40-81d0-b00b-c18ad2d21107" class="image"><a href="https://anytype.io/assets/pricing/donate.svg"><img src="https://anytype.io/assets/pricing/donate.svg"/></a></figure></div><div id="2408bfda-6c40-81e6-8bd1-f348cd714e95" style="width:4.166666666666666%" class="column"><p id="2408bfda-6c40-8129-b4e7-f5f27020c2b3" class="">
+</p></div></div></div></figure><div id="2408bfda-6c40-817b-96e4-ff8ffbcf1dbe" class="column-list"><div id="2408bfda-6c40-8191-b2b7-cb505bb5f9c7" style="width:100%" class="column"></div></div></div></figure><p id="2408bfda-6c40-8119-80da-c42dd25d137c" class="">
+</p><hr id="2408bfda-6c40-818d-96a0-c37eb8008308"/><h1 id="2408bfda-6c40-81bb-b6e9-f3eda7ac323d" class=""><mark class="highlight-orange"><mark class="highlight-blue_background"><strong>你看的是剧，我演的是人生</strong></mark></mark></h1><p id="2408bfda-6c40-8165-bf55-fad9e165b996" class="">
+</p><figure id="2408bfda-6c40-8195-a9d7-cdf9a56c69fc" class="image"><a href="../../%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/001_%E5%89%AF%E6%9C%AC_(6).png"><img style="width:2560px" src="../../%E5%86%85%E5%B9%95%E6%8F%AD%E7%A7%98%202408bfda6c4081b58cd7f30da2c14764/001_%E5%89%AF%E6%9C%AC_(6).png"/></a></figure><p id="2408bfda-6c40-813d-b20f-f6fc2562a02e" class="">
+</p><h3 id="2408bfda-6c40-8124-a162-f0de78137a90" class=""><strong>每一秒，都是一个无法撤回的真相。</strong></h3><h3 id="2408bfda-6c40-81ec-b854-d576c0f2d81f" class=""><strong>资本的游戏，良知的代价</strong></h3><p id="2408bfda-6c40-813b-b06a-f7b501aceefc" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2408bfda-6c40-818f-9e31-ef60140e369c"><div style="width:100%"><p id="2408bfda-6c40-81c4-bdb7-e32928fbdbe0" class="">这不仅是一部剧，更是一段真实的亲身经历</p><p id="2408bfda-6c40-813f-9fa9-c0307620b706" class="">一位千亿上市公司的资本操盘手，如何一步步参与华熙的财务造假，欺诈发行债券，并为其募集了6年期、年化1.5%利率的5亿人民币。。</p><p id="2408bfda-6c40-812c-9f3b-c815eef7bd1e" class=""><strong>之后，又沦为被赵燕以及其背后的孙力军傅政华政治团伙势力追杀的吹哨人。。</strong></p><p id="2408bfda-6c40-81b8-85db-cfc2fb319f0f" class="">一场精心设计的财务骗局，背后牵扯出怎样惊天的权力网络？欢迎进入《玻尿酸女王那些事儿》，在这里，每一集都是真实发生过的惊心动魄。</p></div></figure><p id="2408bfda-6c40-8116-9db5-ceb011615816" class="">
+</p><hr id="2408bfda-6c40-81c0-92f6-d0dbaf95c5fb"/><p id="2408bfda-6c40-8190-8b76-e1dd17996d19" class=""><mark class="highlight-gray"><strong>© 2025 玻尿酸女王那些事儿, David | 作者/华熙生物吹哨人/被陷害的犯罪嫌疑人</strong></mark></p><p id="2408bfda-6c40-81ce-b19a-c8a6e49b1a70" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
